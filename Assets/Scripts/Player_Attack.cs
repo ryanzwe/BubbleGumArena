@@ -2,34 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Attack : MonoBehaviour {
-
-
+public class Player_Attack : MonoBehaviour
+{
+    private Transform trans;
     [SerializeField] string attackButton;
-    [SerializeField] bool attack;
     [SerializeField] float speed;
     [SerializeField] float knockUp;
     Animator anim;
-    Rigidbody otherBody;
     void Start ()
     {
-        anim = gameObject.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        trans = GetComponent<Transform>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.transform.CompareTag("Player"))
         {
-            otherBody = collision.gameObject.GetComponent<Rigidbody>();
-            otherBody.AddForce((gameObject.transform.forward - (gameObject.transform.up/knockUp)) * speed);
+            Rigidbody otherBody  = collision.gameObject.GetComponent<Rigidbody>();
+            otherBody.AddForce((trans.forward - (trans.up/knockUp)) * speed);
         }
     }
 
     void Update()
     {
-        if (Input.GetButton(attackButton))
-            anim.SetBool("Attack", true);
-        else
-            anim.SetBool("Attack", false);
+        anim.SetBool("Attack",Input.GetButtonDown(attackButton));
     }
 }
