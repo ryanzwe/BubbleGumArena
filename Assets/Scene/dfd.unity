@@ -973,7 +973,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -3.3785374
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1017,31 +1017,6 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxis
       value: Player_2_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: PlayerAvatar
-      value: 
-      objectReference: {fileID: 147832052}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1901973786}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 114759712249887974, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: attackButton
-      value: Player_2_Fire1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
@@ -1132,7 +1107,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -3.3785374
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1176,31 +1151,6 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxis
       value: Player_3_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: PlayerAvatar
-      value: 
-      objectReference: {fileID: 1701230051}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 180911408}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 114759712249887974, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: attackButton
-      value: Player_3_Fire1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
@@ -1868,7 +1818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -3.3785374
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1894,31 +1844,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: PlayerAvatar
-      value: 
-      objectReference: {fileID: 551812321}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1220843157}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 114759712249887974, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: attackButton
-      value: Player_1_Fire1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
   m_IsPrefabParent: 0
@@ -1940,7 +1865,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -3.3785374
       objectReference: {fileID: 0}
     - target: {fileID: 4377714902234716, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1984,31 +1909,6 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxis
       value: Player_4_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: PlayerAvatar
-      value: 
-      objectReference: {fileID: 267417698}
-    - target: {fileID: 114451380171560702, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1006149778}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54670419219174754, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 114759712249887974, guid: fe2b55b7268d8174a98a439fc46a7513,
-        type: 2}
-      propertyPath: attackButton
-      value: Player_4_Fire1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe2b55b7268d8174a98a439fc46a7513, type: 2}
@@ -2460,9 +2360,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2088350437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca6548c9586c9f4d93e7194e79412b4, type: 3}
+  m_Script: {fileID: 11500000, guid: cf8bd4ba7d3f4f7ba591df2ce9aa28ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementSpeed: 15
+  JumpSpeed: 15
 --- !u!114 &2088350440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,8 +2373,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2088350437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0da3d70671a8946a273f20acd80574, type: 3}
+  m_Script: {fileID: 11500000, guid: a8a304495ee552942aa1e952bd87e53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 15
-  JumpSpeed: 55

@@ -32,14 +32,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
     // Use this for initialization
-    //void OnEnable()
-    //{
-    //    GameController.Instance.Ticked += HealthNegationTest;
-    //}
-    //void OnDisable()
-    //{
-    //    GameController.Instance.Ticked -= HealthNegationTest;
-    //}
+    void OnEnable()
+    {
+        GameController.Instance.Ticked += HealthNegationTest;
+    }
+    void OnDisable()
+    {
+        GameController.Instance.Ticked -= HealthNegationTest;
+    }
 
     private void HealthNegationTest()
     {
