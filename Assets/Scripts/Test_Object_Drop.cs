@@ -13,9 +13,9 @@ public class Test_Object_Drop : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown(attackButton))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Instantiate(myBox);
+            Instantiate(myBox,transform.GetChild(Random.Range(0,transform.childCount)).transform.position + transform.right  *1.5f ,Quaternion.identity);
         }
 
     }

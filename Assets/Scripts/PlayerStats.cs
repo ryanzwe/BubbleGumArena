@@ -19,8 +19,8 @@ public class PlayerStats : MonoBehaviour
             if (value > maxHealth) health = maxHealth;
         }
     }
-    // Maybe we have a health powerup that increases max health? 
 
+    // Maybe we have a health powerup that increases max health? 
     private int maxHealth = 100;
     public int MaxHealth
     {
@@ -31,27 +31,30 @@ public class PlayerStats : MonoBehaviour
             Health = value;
         }
     }
-    // Use this for initialization
-    //void OnEnable()
-    //{
-    //    GameController.Instance.Ticked += HealthNegationTest;
-    //}
-    //void OnDisable()
-    //{
-    //    GameController.Instance.Ticked -= HealthNegationTest;
-    //}
+
+    private void Awake()
+    {
+        health = maxHealth;
+    }
+    // This is purely for making everyone lose health to test ui elements, will be removed in the future 
+    void OnEnable()
+    {
+        GameController.Instance.Ticked += HealthNegationTest;
+    }
+    // This is purely for making everyone lose health to test ui elements, will be removed in the future }
+
+    void OnDisable()
+    {
+        GameController.Instance.Ticked -= HealthNegationTest;
+    }
+    // This is purely for making everyone lose health to test ui elements, will be removed in the future }
 
     private void HealthNegationTest()
     {
         Debug.Log(health);
         health -= 5;
     }
-
-    private void Awake()
-    {
-        health = maxHealth;
-    }
-    // Update is called once per frame
+    
     void Update()
     {// Doesn't update from property?
         if (HealthBar.value != health) HealthBar.value = health;
