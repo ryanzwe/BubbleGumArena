@@ -8,24 +8,37 @@ public class Player_Attack : MonoBehaviour
     [SerializeField] string attackButton;
     [SerializeField] float speed;
     [SerializeField] float knockUp;
-    Animator anim;
-    void Start ()
+    private bool attacking;
+    [SerializeField] Animator anim;
+    void Start()
     {
-        anim = GetComponent<Animator>();
         trans = GetComponent<Transform>();
+        Physics.IgnoreCollision(GetComponent<Collider>(), transform.parent.GetComponent<Collider>());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        Debug.Log("Hit" + collision.gameObject.name + attacking);
+        if (collision.transform.CompareTag("Player") && attacking)
         {
-            Rigidbody otherBody  = collision.gameObject.GetComponent<Rigidbody>();
-            otherBody.AddForce((trans.forward - (trans.up/knockUp)) * speed);
+            Debug.Log("atk");
+            Rigidbody otherBody = collision.gameObject.GetComponent<Rigidbody>();
+            otherBody.AddForce((trans.forward + (trans.up / knockUp)) * speed);
         }
     }
 
     void Update()
     {
-        anim.SetBool("Attack",Input.GetButtonDown(attackButton));
+        if (Input.GetButtonDown(attackButton))
+            StartCoroutine(Attack());
+    }
+
+    IEnumerator Attack()
+    {
+        attacking = true;
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        attacking = false;
+
     }
 }

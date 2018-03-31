@@ -51,7 +51,7 @@ public class PlayerStats : MonoBehaviour
 
     private void HealthNegationTest()
     {
-        Debug.Log(health);
+      //  Debug.Log(health);
         health -= 5;
     }
     

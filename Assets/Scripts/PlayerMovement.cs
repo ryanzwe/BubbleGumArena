@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform trans;
     private Rigidbody rb;
     private Collider col;
-    public string HorizontalAxis = "Player_1_Horizontal";
+    public string HorizontalAxis = "Player_1_Horizontal"; // Might change these all to gameObject.name + "_Axis" etc because prefab updating is a nightmare, keeping it like this incase we rename stuff later
     public string JumpAxis = "Player_1_Jump";
     public string VerticalAxis = "Player_1_Vertical";
     private int terrainLayer = 1 << 8;
