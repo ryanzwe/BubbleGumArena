@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114451380171560702}
   - component: {fileID: 54670419219174754}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 17dfe0356749827489d08885286b1d47, type: 2}
   m_StaticBatchInfo:
@@ -187,7 +186,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 6438024e20d261746b4b3c940a928aef, type: 2}
   m_StaticBatchInfo:
@@ -222,7 +220,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 6438024e20d261746b4b3c940a928aef, type: 2}
   m_StaticBatchInfo:
@@ -297,7 +294,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114224620159428662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,9 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79453cd874090aa49be14bd38ded57ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalAxis: Player_2_Horizontal
-  JumpAxis: Player_2_Jump
-  VerticalAxis: Player_2_Vertical
+  GlobalVarsToggle: 0
+  MovementSpeed: 15
+  JumpSpeed: 397
+  HorizontalAxis: Player_1_Horizontal
+  JumpAxis: Player_1_Jump
+  VerticalAxis: Player_1_Vertical
 --- !u!114 &114451380171560702
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float MovementSpeed = 0;
-    private float JumpSpeed = 0;
+    public bool GlobalVarsToggle;
+    // movementVars
+    [SerializeField] private float MovementSpeed = 15;
+    [SerializeField] private float JumpSpeed = 397f;
     private float maximumForceSpeed;
+    // Components
     private Transform trans;
     private Rigidbody rb;
     private Collider col;
+    //Axis
     public string HorizontalAxis = "Player_1_Horizontal"; // Might change these all to gameObject.name + "_Axis" etc because prefab updating is a nightmare, keeping it like this incase we rename stuff later
     public string JumpAxis = "Player_1_Jump";
     public string VerticalAxis = "Player_1_Vertical";
@@ -18,12 +22,20 @@ public class PlayerMovement : MonoBehaviour
     // Subscribe to the movement update event
     private void OnEnable()
     {
-        GlobalVariables.Instance.OnStatsUpdate += UpdateSpeeds;
+        if (!GlobalVarsToggle)
+            GlobalVariables.Instance.OnStatsUpdate += UpdateSpeeds;
     }
     // Unsubscribe to the movement update event 
     private void OnDisable()
     {
-        GlobalVariables.Instance.OnStatsUpdate -= UpdateSpeeds;
+        if (!GlobalVarsToggle)
+            GlobalVariables.Instance.OnStatsUpdate -= UpdateSpeeds;
+    }
+    // delegate passthrough for the OnStatusUpdate event
+    private void UpdateSpeeds()
+    {
+        MovementSpeed = GlobalVariables.Instance.MovementSpeed;
+        JumpSpeed = GlobalVariables.Instance.JumpSpeed;
     }
     // Use this for initialization
     void Start()
@@ -35,12 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
     }
-    // delegate passthrough for the OnStatusUpdate event
-    private void UpdateSpeeds()
-    {
-        MovementSpeed = GlobalVariables.Instance.MovementSpeed;
-        JumpSpeed = GlobalVariables.Instance.JumpSpeed;
-    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -49,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
         // Player movement
         float horizontalForce = Input.GetAxis(HorizontalAxis);
         float verticalForce = Input.GetAxis(VerticalAxis);
-        float jumpForce = isGrounded() ? Input.GetAxis(JumpAxis) : 0;// If the player is grounded, check for input axis, else 0 
-        Debug.Log(jumpForce);
-        rb.AddForce(new Vector3(horizontalForce * MovementSpeed, jumpForce * JumpSpeed, verticalForce * MovementSpeed));// X,Y,Z forces
+       // float jumpForce = isGrounded() ? Input.GetAxis(JumpAxis) : 0;// If the player is grounded, check for input axis, else 0 
+       
+        rb.AddForce(new Vector3(horizontalForce * MovementSpeed, 0, verticalForce * MovementSpeed));// X,Y,Z forces
 
         // Slow down the player faster
         if (horizontalForce == 0f && verticalForce == 0f)

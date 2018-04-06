@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
             if (value > maxHealth) health = maxHealth;
         }
     }
-
+    private Vector3 spawnPosition;
     // Maybe we have a health powerup that increases max health? 
     private int maxHealth = 100;
     public int MaxHealth
@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         health = maxHealth;
+        spawnPosition = transform.position;
     }
     // This is purely for making everyone lose health to test ui elements, will be removed in the future 
     void OnEnable()
@@ -58,5 +59,10 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {// Doesn't update from property?
         if (HealthBar.value != health) HealthBar.value = health;
+    }
+
+    public void Respawn()
+    {
+        transform.position = spawnPosition;
     }
 }
