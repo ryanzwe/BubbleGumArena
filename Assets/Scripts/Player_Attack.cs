@@ -10,20 +10,22 @@ public class Player_Attack : MonoBehaviour
     [SerializeField] float knockUp;
     private bool attacking;
     [SerializeField] Animator anim;
+    [SerializeField] private Collider RootCollider;
     void Start()
     {
         trans = GetComponent<Transform>();
-        Physics.IgnoreCollision(GetComponent<Collider>(), transform.parent.GetComponent<Collider>());
+        Physics.IgnoreCollision(GetComponent<Collider>(), RootCollider);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit" + collision.gameObject.name + attacking);
+       // Debug.Log("Hit" + collision.gameObject.name + attacking);
         if (collision.transform.CompareTag("Player") && attacking)
         {
             Debug.Log("atk");
             Rigidbody otherBody = collision.gameObject.GetComponent<Rigidbody>();
             otherBody.AddForce((trans.forward + (trans.up / knockUp)) * speed);
+            attacking = false;
         }
     }
 

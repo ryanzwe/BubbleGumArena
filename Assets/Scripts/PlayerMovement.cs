@@ -7,8 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool GlobalVarsToggle;
     // movementVars
-    [SerializeField] private float MovementSpeed = 15;
-    [SerializeField] private float JumpSpeed = 397f;
+    [SerializeField] private float movementSpeed = 15;
+    [SerializeField] private float jumpSpeed = 397f;
+    [SerializeField] private float rotateSpeed = 0.10f;
     private float maximumForceSpeed;
     // Components
     private Transform trans;
@@ -34,15 +35,16 @@ public class PlayerMovement : MonoBehaviour
     // delegate passthrough for the OnStatusUpdate event
     private void UpdateSpeeds()
     {
-        MovementSpeed = GlobalVariables.Instance.MovementSpeed;
-        JumpSpeed = GlobalVariables.Instance.JumpSpeed;
+        movementSpeed = GlobalVariables.Instance.MovementSpeed;
+        jumpSpeed = GlobalVariables.Instance.JumpSpeed;
+        rotateSpeed = GlobalVariables.Instance.RotateSpeed;
     }
     // Use this for initialization
     void Start()
     { // Created this way in case we have a global speed crazy mode powerup or something
         UpdateSpeeds();
         // Limiting the players max force speed and grabbing components 
-        maximumForceSpeed = MovementSpeed + 1;
+        maximumForceSpeed = movementSpeed + 1;
         trans = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -51,24 +53,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Used to prevent uncecessary calls
-        Vector3 velocity = rb.velocity;
-        // Player movement
-        float horizontalForce = Input.GetAxis(HorizontalAxis);
-        float verticalForce = Input.GetAxis(VerticalAxis);
-       // float jumpForce = isGrounded() ? Input.GetAxis(JumpAxis) : 0;// If the player is grounded, check for input axis, else 0 
-       
-        rb.AddForce(new Vector3(horizontalForce * MovementSpeed, 0, verticalForce * MovementSpeed));// X,Y,Z forces
-
-        // Slow down the player faster
-        if (horizontalForce == 0f && verticalForce == 0f)
-            rb.velocity = velocity * 0.95f;
-        // Limit the players speed
-        if (velocity.magnitude > maximumForceSpeed)
-            rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
+        if (Input.GetAxis(HorizontalAxis) != 0 || Input.GetAxis(VerticalAxis) != 0)
+        {
+            // Used to prevent uncecessary calls
+            Vector3 velocity = rb.velocity;
+            // Player movement
+            float horizontalForce = Input.GetAxis(HorizontalAxis);
+            float verticalForce = Input.GetAxis(VerticalAxis);
+            // float jumpForce = isGrounded() ? Input.GetAxis(JumpAxis) : 0;// If the player is grounded, check for input axis, else 0 
+            Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVec), rotateSpeed);
+            rb.AddForce(moveVec); // X,Y,Z forces
+            // Slow down the player faster
+            if (horizontalForce == 0f && verticalForce == 0f)
+                rb.velocity = velocity * 0.95f;
+            // Limit the players speed
+            if (velocity.magnitude > maximumForceSpeed)
+                rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
+        }
     }
 
-    bool isGrounded()
+    private bool isGrounded()
     {
         // Raycast from the bottom of the players collider and see if they're touching the floor 
         Vector3 pos = new Vector3(trans.position.x, col.bounds.min.y, trans.position.z);

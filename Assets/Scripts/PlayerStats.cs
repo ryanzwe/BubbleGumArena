@@ -58,7 +58,7 @@ public class PlayerStats : MonoBehaviour
     
     void Update()
     {// Doesn't update from property?
-        if (HealthBar.value != health) HealthBar.value = health;
+       // if (HealthBar.value != health) HealthBar.value = health;
     }
 
     public void Respawn()
