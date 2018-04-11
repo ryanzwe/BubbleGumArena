@@ -7,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool GlobalVarsToggle;
     // movementVars
-    [SerializeField] private float movementSpeed = 15;
-    [SerializeField] private float jumpSpeed = 397f;
-    [SerializeField] private float rotateSpeed = 0.10f;
+    [SerializeField]
+    private float movementSpeed = 15;
+    [SerializeField]
+    private float jumpSpeed = 397f;
+    [SerializeField]
+    private float rotateSpeed = 0.10f;
     private float maximumForceSpeed;
     // Components
     private Transform trans;
@@ -20,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public string JumpAxis = "Player_1_Jump";
     public string VerticalAxis = "Player_1_Vertical";
     private int terrainLayer = 1 << 8;
+    [SerializeField]
+    private Animator anim;
     // Subscribe to the movement update event
     private void OnEnable()
     {
@@ -53,10 +58,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        anim.SetFloat("Moving", rb.velocity.magnitude);
         if (Input.GetAxis(HorizontalAxis) != 0 || Input.GetAxis(VerticalAxis) != 0)
         {
             // Used to prevent uncecessary calls
             Vector3 velocity = rb.velocity;
+            Debug.Log("velocity: " + velocity.magnitude);
             // Player movement
             float horizontalForce = Input.GetAxis(HorizontalAxis);
             float verticalForce = Input.GetAxis(VerticalAxis);

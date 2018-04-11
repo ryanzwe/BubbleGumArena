@@ -6,6 +6,8 @@ public class Player_Attack : MonoBehaviour
 {
     private Transform trans;
     [SerializeField] string attackButton;
+    [SerializeField]
+    string attackButtonTwo;
     [SerializeField] float speed;
     [SerializeField] float knockUp;
     private bool attacking;
@@ -32,13 +34,15 @@ public class Player_Attack : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown(attackButton))
-            StartCoroutine(Attack());
+            StartCoroutine(Attack("Attack"));
+        if (Input.GetButtonDown(attackButtonTwo))
+            StartCoroutine(Attack("Whomp"));
     }
 
-    IEnumerator Attack()
+    IEnumerator Attack(string attackType)
     {
         attacking = true;
-        anim.SetTrigger("Attack");
+        anim.SetTrigger(attackType);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         attacking = false;
 
