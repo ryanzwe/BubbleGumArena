@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 114280124951732184}
   - component: {fileID: 114104904290332302}
   - component: {fileID: 54088697095694406}
-  - component: {fileID: 136044375135886714}
+  - component: {fileID: 136314875962421816}
   m_Layer: 0
   m_Name: Player - 1
   m_TagString: Player
@@ -351,7 +351,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908622467526872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.800711, y: -1.3, z: -4.7043324}
+  m_LocalPosition: {x: 13.800711, y: -2.49, z: -4.7043324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4068464786226336}
@@ -546,11 +546,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackButton: Player_1_Fire1
+  attackButtonTwo: Player_1_Fire2
   speed: -10000
   knockUp: 2
   anim: {fileID: 95704120915006976}
-  RootCollider: {fileID: 136044375135886714}
---- !u!136 &136044375135886714
+  RootCollider: {fileID: 136314875962421816}
+--- !u!136 &136314875962421816
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -559,10 +560,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.72
-  m_Height: 2.12
+  m_Radius: 0.8
+  m_Height: 2.95
   m_Direction: 1
-  m_Center: {x: 0, y: 0.81, z: 0}
+  m_Center: {x: 0, y: 1.35, z: 0}
 --- !u!136 &136981722715988328
 CapsuleCollider:
   m_ObjectHideFlags: 1
