@@ -13,11 +13,13 @@ public class GlobalVariables : MonoBehaviour
     public float MovementSpeed = 5f;
     public float JumpSpeed = 5f;
     public float RotateSpeed = 0.10f;
+    public float SlowDownFactor = 0.8f;
     public delegate void Updated();
     public event Updated OnStatsUpdate;
     private float prevFrameMove;
     private float prevFrameJump;
     private float prevRotateFrame;
+    private float prevSlowDownFactor;
 
     private void Awake()
     {
@@ -25,6 +27,7 @@ public class GlobalVariables : MonoBehaviour
         prevFrameMove = MovementSpeed;
         prevFrameJump = JumpSpeed;
         prevRotateFrame = RotateSpeed;
+        prevSlowDownFactor = SlowDownFactor;
     }
 
     public void Update()
@@ -36,9 +39,9 @@ public class GlobalVariables : MonoBehaviour
             prevFrameMove = MovementSpeed;
             prevFrameJump = JumpSpeed;
             prevRotateFrame = RotateSpeed;
+            prevSlowDownFactor = SlowDownFactor;
             OnStatsUpdate?.Invoke();
         }
-
     }
 }
 

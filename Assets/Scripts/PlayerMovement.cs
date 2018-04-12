@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpSpeed = 397f;
     [SerializeField]
     private float rotateSpeed = 0.10f;
+    [SerializeField]
+    private float slowDownFactor = 0f;
     private float maximumForceSpeed;
     // Components
     private Transform trans;
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         movementSpeed = GlobalVariables.Instance.MovementSpeed;
         jumpSpeed = GlobalVariables.Instance.JumpSpeed;
         rotateSpeed = GlobalVariables.Instance.RotateSpeed;
+        slowDownFactor = GlobalVariables.Instance.SlowDownFactor;
     }
     // Use this for initialization
     void Start()
@@ -73,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveVec); // X,Y,Z forces
             // Slow down the player faster
             if (horizontalForce == 0f && verticalForce == 0f)
-                rb.velocity = velocity * 0.95f;
+                rb.velocity = velocity * (0.95f * slowDownFactor);
             // Limit the players speed
             if (velocity.magnitude > maximumForceSpeed)
                 rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
