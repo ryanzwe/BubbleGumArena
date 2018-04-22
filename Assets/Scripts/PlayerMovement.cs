@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool GlobalVarsToggle;
+    public bool GlobalVarsEnabled = true;
     // movementVars
     [SerializeField]
-    private float movementSpeed = 15;
+    private float accelerationSpeed = 15;
     [SerializeField]
     private float jumpSpeed = 397f;
     [SerializeField]
     private float rotateSpeed = 0.10f;
     [SerializeField]
     private float slowDownFactor = 0f;
+    [SerializeField]
     private float maximumForceSpeed;
     // Components
     private Transform trans;
@@ -30,19 +31,19 @@ public class PlayerMovement : MonoBehaviour
     // Subscribe to the movement update event
     private void OnEnable()
     {
-        if (!GlobalVarsToggle)
+        if (GlobalVarsEnabled)
             GlobalVariables.Instance.OnStatsUpdate += UpdateSpeeds;
     }
     // Unsubscribe to the movement update event 
     private void OnDisable()
     {
-        if (!GlobalVarsToggle)
+        if (GlobalVarsEnabled)
             GlobalVariables.Instance.OnStatsUpdate -= UpdateSpeeds;
     }
     // delegate passthrough for the OnStatusUpdate event
     private void UpdateSpeeds()
     {
-        movementSpeed = GlobalVariables.Instance.MovementSpeed;
+        accelerationSpeed = GlobalVariables.Instance.accelerationSpeed;
         jumpSpeed = GlobalVariables.Instance.JumpSpeed;
         rotateSpeed = GlobalVariables.Instance.RotateSpeed;
         slowDownFactor = GlobalVariables.Instance.SlowDownFactor;
@@ -52,12 +53,19 @@ public class PlayerMovement : MonoBehaviour
     { // Created this way in case we have a global speed crazy mode powerup or something
         UpdateSpeeds();
         // Limiting the players max force speed and grabbing components 
-        maximumForceSpeed = movementSpeed + 1;
         trans = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
     }
 
+    void Update()
+    {
+        // for testing 
+        if (GlobalVarsEnabled)
+            GlobalVariables.Instance.OnStatsUpdate += UpdateSpeeds;
+        else if (!GlobalVarsEnabled)
+            GlobalVariables.Instance.OnStatsUpdate -= UpdateSpeeds;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -71,10 +79,10 @@ public class PlayerMovement : MonoBehaviour
             float horizontalForce = Input.GetAxis(HorizontalAxis);
             float verticalForce = Input.GetAxis(VerticalAxis);
             // float jumpForce = isGrounded() ? Input.GetAxis(JumpAxis) : 0;// If the player is grounded, check for input axis, else 0 
-            Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
+            Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * accelerationSpeed;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVec), rotateSpeed);
             rb.AddForce(moveVec); // X,Y,Z forces
-            // Slow down the player faster
+            //Slow down the player faster
             if (horizontalForce == 0f && verticalForce == 0f)
                 rb.velocity = velocity * (0.95f * slowDownFactor);
             // Limit the players speed
