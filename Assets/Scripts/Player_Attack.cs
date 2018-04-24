@@ -6,36 +6,50 @@ public class Player_Attack : MonoBehaviour
 {
     private Transform trans;
     [SerializeField] string attackButton;
-    [SerializeField]
-    string attackButtonTwo;
-    [SerializeField] float speed;
-    [SerializeField] float knockUp;
-    private bool attacking;
+    [SerializeField] string attackButtonTwo;
+    [SerializeField] float bump;
+    [SerializeField] public float speed;
+    [SerializeField] public float knockUp;
+    [SerializeField] public float headButtReduce;
+    [SerializeField] float attackMultiEffector = 1;
+    //[SerializeField] private 
+    public bool attacking;
     [SerializeField] Animator anim;
-    [SerializeField] private Collider RootCollider;
-    void Start()
+    //[SerializeField] private Collider RootCollider;
+    private float attackMultiplier = 1;
+    public float AttackMultiplier
     {
-        trans = GetComponent<Transform>();
-        Physics.IgnoreCollision(GetComponent<Collider>(), RootCollider);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-       // Debug.Log("Hit" + collision.gameObject.name + attacking);
-        if (collision.transform.CompareTag("Player") && attacking)
+        get
         {
-            Debug.Log("atk");
-            Rigidbody otherBody = collision.gameObject.GetComponent<Rigidbody>();
-            otherBody.AddForce((trans.forward + (trans.up / knockUp)) * speed);
-            attacking = false;
+            return attackMultiplier;
+        }
+        set
+        {
+            attackMultiplier += (value * attackMultiEffector);
         }
     }
 
+    void Start()
+    {
+        trans = GetComponent<Transform>();
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    // Debug.Log("Hit" + collision.gameObject.name + attacking);
+    //    if (collision.transform.CompareTag("Player") && !attacking)
+    //    {
+    //        Rigidbody otherBody = collision.gameObject.GetComponent<Rigidbody>();
+    //        otherBody.AddForce(trans.forward * bump);
+    //        //attacking = false;
+    //    }
+    //}
+
     void Update()
     {
-        if (Input.GetButtonDown(attackButton))
+        if (Input.GetButton(attackButton) && attacking == false)
             StartCoroutine(Attack("Attack"));
-        if (Input.GetButtonDown(attackButtonTwo))
+        if (Input.GetButton(attackButtonTwo) && attacking == false)
             StartCoroutine(Attack("Whomp"));
     }
 
