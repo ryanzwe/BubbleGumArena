@@ -23,11 +23,11 @@ public class Stagger : MonoBehaviour
 
     void Update()
     {
-            // Raycast from the bottom of the players collider and see if they're touching the floor 
-            Vector3 pos = new Vector3(trans.position.x, col.bounds.min.y, trans.position.z);
-            //Debug.DrawRay(pos, -transform.up * 0.5f, Color.red);
-            if (Physics.Raycast(pos, -transform.up, 0.1f, terrainLayer))
-                isGrounded = true;
+        // Raycast from the bottom of the players collider and see if they're touching the floor 
+        Vector3 pos = new Vector3(trans.position.x, col.bounds.min.y, trans.position.z);
+        //Debug.DrawRay(pos, -transform.up * 0.5f, Color.red);
+        if (Physics.Raycast(pos, -transform.up, 0.1f, terrainLayer))
+            isGrounded = true;
         else
         {
             isGrounded = false;
