@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             float verticalForce = Input.GetAxis(VerticalAxis);
             float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
             Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
-            if (jumpForce > 0 && canDash)
+            if (jumpForce < 0 && canDash)
             {
                 moveVec += transform.forward * dashSpeed;
                 StartCoroutine(StartCD());
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(moveVec); // X,Y,Z forces
             }
-            else if (jumpForce > 0  && canDash)
+            else if (jumpForce < 0  && canDash)
                 rb.AddForce(transform.forward * dashSpeed);
             // Slow down the player faster
             //if (horizontalForce == 0f && verticalForce == 0f)
