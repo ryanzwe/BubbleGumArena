@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
      private float dashSpeed = 1500;
     [SerializeField] private float dashCD = 3f;
     [SerializeField] private bool canDash = true;
+    private float dashForceSpeedOverride;
     // Components
     private Transform trans;
     private Rigidbody rb;
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         trans = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+        dashForceSpeedOverride = maximumForceSpeed + (dashSpeed * 0.5f);
     }
 
     // Update is called once per frame
@@ -109,6 +111,10 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator StartCD()
     {
+        float tempForce = maximumForceSpeed;
+        maximumForceSpeed = dashForceSpeedOverride;
+        yield return new WaitForSeconds(0.2f);
+        maximumForceSpeed = tempForce;
         yield return null;
         canDash = false;
         yield return new WaitForSeconds(dashCD);

@@ -50,7 +50,7 @@ public class GlobalVariables : MonoBehaviour
             prevRotateFrame = RotateSpeed;
             prevMaximumForceSpeed = MaximumForceSpeed;
             prevDashCD = DashCD;
-            prevDashSpeed = DashSpeed
+            prevDashSpeed = DashSpeed;
             OnStatsUpdate?.Invoke();
         }
     }
