@@ -74,11 +74,13 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("velocity: " + velocity.magnitude);
             // Player movement
             bool frameGrounded = IsGrounded();
+            Debug.Log(frameGrounded);
             float horizontalForce = Input.GetAxis(HorizontalAxis);
             float verticalForce = Input.GetAxis(VerticalAxis);
             float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
             Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
-            if (jumpForce < 0 && canDash)
+
+            if (jumpForce != 0 && canDash)
             {
                 moveVec += transform.forward * dashSpeed;
                 StartCoroutine(StartCD());
@@ -88,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(moveVec); // X,Y,Z forces
             }
-            else if (jumpForce < 0  && canDash)
+            else if (jumpForce != 0  && canDash)
                 rb.AddForce(transform.forward * dashSpeed);
             // Slow down the player faster
             //if (horizontalForce == 0f && verticalForce == 0f)
@@ -104,9 +106,14 @@ public class PlayerMovement : MonoBehaviour
         // Raycast from the bottom of the players collider and see if they're touching the floor 
         Vector3 pos = new Vector3(trans.position.x, col.bounds.min.y + 0.1f, trans.position.z);
         //Debug.DrawRay(pos, -transform.up * 0.5f, Color.red);
-        if (Physics.Raycast(pos, -transform.up, 0.1f, terrainLayer))
+        if (Physics.Raycast(pos, -transform.up, 0.20f, terrainLayer))
+        {
+            Debug.Log("Touching");
             return true;
+        }
+            Debug.Log("nein");
         return false;
+
     }
 
     private IEnumerator StartCD()
