@@ -1,0 +1,270 @@
+fileFormatVersion: 2
+guid: 413715ccc5d07a645b55c6c1db847997
+timeCreated: 1525178157
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AirHorn_Butt
+    100002: Apron_Chest
+    100004: Award_Chest
+    100006: Base_jnt
+    100008: BatteryPack_Chest
+    100010: Binky_Mouth
+    100012: BlindFold_Face
+    100014: Bolts_Head
+    100016: BowTie_Chest
+    100018: Butt
+    100020: Caps_Haed
+    100022: CavemanBone_Butt
+    100024: CavemanBone_Head
+    100026: Char_Body_Collider
+    100028: Char_Head_Collider
+    100030: Char_L_Cheek_Collider
+    100032: Char_R_Cheek Collider
+    100034: //RootNode
+    100036: Character_Mesh
+    100038: CheekMeat_L_jnt
+    100040: CheekMeat_R_jnt
+    100042: Chest
+    100044: Crown_Hat
+    100046: Face
+    100048: FryingPan_Hat
+    100050: Glasses_Face
+    100052: GlassFrames_Face
+    100054: Hat
+    100056: Head
+    100058: Head_end_jnt
+    100060: Head_jnt
+    100062: Hip_jnt
+    100064: Horns_Head
+    100066: LolliPop_Butt
+    100068: LolliPop_Mouth
+    100070: Mask_Face
+    100072: Mouth
+    100074: RibbonHat_Hat
+    100076: Rump_L_jnt
+    100078: Rump_R_jnt
+    100080: Satelite_Hat
+    100082: Skel_grp
+    100084: Spatula_Butt
+    100086: Tie_Chest
+    100088: Toe_jnt
+    100090: Waist_jnt
+    400000: AirHorn_Butt
+    400002: Apron_Chest
+    400004: Award_Chest
+    400006: Base_jnt
+    400008: BatteryPack_Chest
+    400010: Binky_Mouth
+    400012: BlindFold_Face
+    400014: Bolts_Head
+    400016: BowTie_Chest
+    400018: Butt
+    400020: Caps_Haed
+    400022: CavemanBone_Butt
+    400024: CavemanBone_Head
+    400026: Char_Body_Collider
+    400028: Char_Head_Collider
+    400030: Char_L_Cheek_Collider
+    400032: Char_R_Cheek Collider
+    400034: //RootNode
+    400036: Character_Mesh
+    400038: CheekMeat_L_jnt
+    400040: CheekMeat_R_jnt
+    400042: Chest
+    400044: Crown_Hat
+    400046: Face
+    400048: FryingPan_Hat
+    400050: Glasses_Face
+    400052: GlassFrames_Face
+    400054: Hat
+    400056: Head
+    400058: Head_end_jnt
+    400060: Head_jnt
+    400062: Hip_jnt
+    400064: Horns_Head
+    400066: LolliPop_Butt
+    400068: LolliPop_Mouth
+    400070: Mask_Face
+    400072: Mouth
+    400074: RibbonHat_Hat
+    400076: Rump_L_jnt
+    400078: Rump_R_jnt
+    400080: Satelite_Hat
+    400082: Skel_grp
+    400084: Spatula_Butt
+    400086: Tie_Chest
+    400088: Toe_jnt
+    400090: Waist_jnt
+    4300000: Character_Mesh
+    4300002: AirHorn_Butt
+    4300004: CavemanBone_Butt
+    4300006: LolliPop_Butt
+    4300008: Spatula_Butt
+    4300010: Char_Head_Collider
+    4300012: Char_L_Cheek_Collider
+    4300014: Char_R_Cheek Collider
+    4300016: Award_Chest
+    4300018: BowTie_Chest
+    4300020: Tie_Chest
+    4300022: Apron_Chest
+    4300024: BatteryPack_Chest
+    4300026: BlindFold_Face
+    4300028: Glasses_Face
+    4300030: GlassFrames_Face
+    4300032: Mask_Face
+    4300034: FryingPan_Hat
+    4300036: RibbonHat_Hat
+    4300038: Crown_Hat
+    4300040: Satelite_Hat
+    4300042: Horns_Head
+    4300044: CavemanBone_Head
+    4300046: Caps_Haed
+    4300048: Bolts_Head
+    4300050: LolliPop_Mouth
+    4300052: Binky_Mouth
+    4300054: Char_Body_Collider
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: AirHorn_Butt
+    13700002: Apron_Chest
+    13700004: Award_Chest
+    13700006: BatteryPack_Chest
+    13700008: Binky_Mouth
+    13700010: BlindFold_Face
+    13700012: Bolts_Head
+    13700014: BowTie_Chest
+    13700016: Caps_Haed
+    13700018: CavemanBone_Butt
+    13700020: CavemanBone_Head
+    13700022: Char_Body_Collider
+    13700024: Char_Head_Collider
+    13700026: Char_L_Cheek_Collider
+    13700028: Char_R_Cheek Collider
+    13700030: Character_Mesh
+    13700032: Crown_Hat
+    13700034: FryingPan_Hat
+    13700036: Glasses_Face
+    13700038: GlassFrames_Face
+    13700040: Horns_Head
+    13700042: LolliPop_Butt
+    13700044: LolliPop_Mouth
+    13700046: Mask_Face
+    13700048: RibbonHat_Hat
+    13700050: Satelite_Hat
+    13700052: Spatula_Butt
+    13700054: Tie_Chest
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Butt_Mat
+    second: {fileID: 2100000, guid: b4375032837c7c74b986cabf6e85bbb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Char_Mat_1
+    second: {fileID: 2100000, guid: 846c153c50bcc234d910020796d81b2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest_Mat
+    second: {fileID: 2100000, guid: 33595a0f765fca54a91b0551731855ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face_Mat
+    second: {fileID: 2100000, guid: 98957a056cc4e324599756b702b413c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat_Mat
+    second: {fileID: 2100000, guid: ee4fd110a556a5e4e9a9de2646ae59e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_Mat
+    second: {fileID: 2100000, guid: 214726c9f0d480b40a5fe7b682c5a833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth_Mat
+    second: {fileID: 2100000, guid: 8d8cbe54d409e064f9986c65ec37de9a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
