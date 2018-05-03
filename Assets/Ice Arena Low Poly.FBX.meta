@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 3de9d3691d999c6439edf2a6275d90c0
+timeCreated: 1525225585
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Box005
+    100010: Cone001
+    100012: //RootNode
+    100014: Object001
+    100016: Object002
+    100018: Object003
+    100020: Object004
+    100022: Object005
+    100024: Object006
+    100026: Object007
+    100028: Object008
+    100030: Object009
+    100032: Object010
+    100034: Object011
+    100036: Object012
+    100038: Object013
+    100040: Object014
+    100042: Object015
+    100044: Object016
+    100046: Object017
+    100048: Object018
+    100050: Object019
+    100052: Object020
+    100054: Object021
+    100056: Object022
+    100058: Object023
+    100060: Object024
+    100062: Object025
+    100064: Object026
+    100066: Object027
+    100068: Object028
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Box005
+    400010: Cone001
+    400012: //RootNode
+    400014: Object001
+    400016: Object002
+    400018: Object003
+    400020: Object004
+    400022: Object005
+    400024: Object006
+    400026: Object007
+    400028: Object008
+    400030: Object009
+    400032: Object010
+    400034: Object011
+    400036: Object012
+    400038: Object013
+    400040: Object014
+    400042: Object015
+    400044: Object016
+    400046: Object017
+    400048: Object018
+    400050: Object019
+    400052: Object020
+    400054: Object021
+    400056: Object022
+    400058: Object023
+    400060: Object024
+    400062: Object025
+    400064: Object026
+    400066: Object027
+    400068: Object028
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Box005
+    2300010: Cone001
+    2300012: Object001
+    2300014: Object002
+    2300016: Object003
+    2300018: Object004
+    2300020: Object005
+    2300022: Object006
+    2300024: Object007
+    2300026: Object008
+    2300028: Object009
+    2300030: Object010
+    2300032: Object011
+    2300034: Object012
+    2300036: Object013
+    2300038: Object014
+    2300040: Object015
+    2300042: Object016
+    2300044: Object017
+    2300046: Object018
+    2300048: Object019
+    2300050: Object020
+    2300052: Object021
+    2300054: Object022
+    2300056: Object023
+    2300058: Object024
+    2300060: Object025
+    2300062: Object026
+    2300064: Object027
+    2300066: Object028
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Box005
+    3300010: Cone001
+    3300012: Object001
+    3300014: Object002
+    3300016: Object003
+    3300018: Object004
+    3300020: Object005
+    3300022: Object006
+    3300024: Object007
+    3300026: Object008
+    3300028: Object009
+    3300030: Object010
+    3300032: Object011
+    3300034: Object012
+    3300036: Object013
+    3300038: Object014
+    3300040: Object015
+    3300042: Object016
+    3300044: Object017
+    3300046: Object018
+    3300048: Object019
+    3300050: Object020
+    3300052: Object021
+    3300054: Object022
+    3300056: Object023
+    3300058: Object024
+    3300060: Object025
+    3300062: Object026
+    3300064: Object027
+    3300066: Object028
+    4300000: Cone001
+    4300002: Box001
+    4300004: Box002
+    4300006: Box003
+    4300008: Box004
+    4300010: Box005
+    4300012: Object001
+    4300014: Object002
+    4300016: Object003
+    4300018: Object004
+    4300020: Object005
+    4300022: Object006
+    4300024: Object007
+    4300026: Object008
+    4300028: Object009
+    4300030: Object010
+    4300032: Object011
+    4300034: Object012
+    4300036: Object013
+    4300038: Object014
+    4300040: Object015
+    4300042: Object016
+    4300044: Object017
+    4300046: Object018
+    4300048: Object019
+    4300050: Object020
+    4300052: Object021
+    4300054: Object022
+    4300056: Object023
+    4300058: Object024
+    4300060: Object025
+    4300062: Object026
+    4300064: Object027
+    4300066: Object028
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 08 - Default
+    second: {fileID: 2100000, guid: f16bc8f39a538a64aa1a305aebeab6d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default
+    second: {fileID: 2100000, guid: 4e6eaad132038104fa736b41b102899d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
