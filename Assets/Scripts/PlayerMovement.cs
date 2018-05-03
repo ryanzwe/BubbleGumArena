@@ -7,15 +7,23 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool GlobalVarsToggle;
     // movementVars
-    [SerializeField] private float movementSpeed = 600f;
-    [SerializeField] private float fallSpeed = 5f;
-    [SerializeField] private float jumpSpeed = 397f;
-    [SerializeField] private float rotateSpeed = 0.10f;
-    [SerializeField] private float maximumForceSpeed;
+    [SerializeField]
+    private float movementSpeed = 600f;
+    [SerializeField]
+    private float fallSpeed = 5f;
+    [SerializeField]
+    private float jumpSpeed = 397f;
+    [SerializeField]
+    private float rotateSpeed = 0.10f;
+    [SerializeField]
+    private float maximumForceSpeed;
+    private bool moving = false;
     //Dashing
-     private float dashSpeed = 1500;
-    [SerializeField] private float dashCD = 3f;
-    [SerializeField] private bool canDash = true;
+    private float dashSpeed = 1500;
+    [SerializeField]
+    private float dashCD = 3f;
+    [SerializeField]
+    private bool canDash = true;
     private float dashForceSpeedOverride;
     // Components
     private Transform trans;
@@ -27,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     public string JumpAxis = "Player_1_Jump";
     public string VerticalAxis = "Player_1_Vertical";
     private int terrainLayer = 1 << 8;
-    [SerializeField] private Animator anim;
+    [SerializeField]
+    private Animator anim;
     // Subscribe to the movement update event
     private void OnEnable()
     {
@@ -67,17 +76,18 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         anim.SetFloat("Moving", rb.velocity.magnitude);
+        float horizontalForce = Input.GetAxis(HorizontalAxis);
+        float verticalForce = Input.GetAxis(VerticalAxis);
+        float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
         if (Input.GetAxis(HorizontalAxis) != 0 || Input.GetAxis(VerticalAxis) != 0)
         {
+            moving = true;
             // Used to prevent uncecessary calls
             Vector3 velocity = rb.velocity;
             //Debug.Log("velocity: " + velocity.magnitude);
             // Player movement
             bool frameGrounded = IsGrounded();
             Debug.Log(frameGrounded);
-            float horizontalForce = Input.GetAxis(HorizontalAxis);
-            float verticalForce = Input.GetAxis(VerticalAxis);
-            float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
             Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
 
             if (jumpForce != 0 && canDash)
@@ -90,14 +100,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(moveVec); // X,Y,Z forces
             }
-            else if (jumpForce != 0  && canDash)
+            else if (jumpForce != 0 && canDash)
                 rb.AddForce(transform.forward * dashSpeed);
             // Slow down the player faster
-            //if (horizontalForce == 0f && verticalForce == 0f)
-            //rb.velocity = velocity * (0.95f * slowDownFactor);
             // Limit the players speed
             if (velocity.magnitude > maximumForceSpeed)
                 rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
+        }
+        else moving = false;
+        // when the player releases a key or stick, slow them to 0 
+        if (Mathf.Abs(horizontalForce) < 0.2f && Mathf.Abs(verticalForce) <= 0.2f && !moving)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
 
@@ -111,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Touching");
             return true;
         }
-            Debug.Log("nein");
+        Debug.Log("nein");
         return false;
 
     }

@@ -6,18 +6,27 @@ using UnityEngine.UI;
 public class GameController_GodClass : MonoBehaviour
 {
     //[SerializeField] GameObject[] players = new GameObject[4];
-    [SerializeField] int numberofPlay = 1;
-    [SerializeField] Player_Attack[] players = new Player_Attack[4];
-    [SerializeField] GameObject[] playerObjects = new GameObject[4];
+    [SerializeField]
+    int numberofPlay = 1;
+    [SerializeField]
+    Player_Attack[] players = new Player_Attack[4];
+    [SerializeField]
+    GameObject[] playerObjects = new GameObject[4];
     private MyPlayers[] myPlayers;
-    [SerializeField] Canvas[] myCanvas = new Canvas[2];
-    [SerializeField] Text[] playerWinBoxes = new Text[4];
-    [SerializeField] Text[] playerHPPercent = new Text[4];
-    [SerializeField] float maxMultiplier; //
+    [SerializeField]
+    Canvas[] myCanvas = new Canvas[2];
+    [SerializeField]
+    Text[] playerWinBoxes = new Text[4];
+    [SerializeField]
+    Text[] playerHPPercent = new Text[4];
+    [SerializeField]
+    float maxMultiplier; //
     private int[] finishOrder = new int[4];
     private int knockOutOrder = 4;
     private int numberOfPlayers;
-
+    private bool paused = false;
+    [SerializeField]
+    private GameObject pausePanel;
     void Start()
     {
         myCanvas[1].enabled = false;
@@ -48,6 +57,12 @@ public class GameController_GodClass : MonoBehaviour
 
     void Update()
     {
+        // in future add controller start button to pause
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseHandler(paused);
+        }
+
         UpdateDisplay();
         //WhoWins();
         if (knockOutOrder <= 1)
@@ -67,16 +82,27 @@ public class GameController_GodClass : MonoBehaviour
 
 
     }
-
+    public void PauseHandler(bool pause = false)
+    {
+        // inspector
+        if (pause != true) paused = pause;
+        // if the game is paused then unpause it and invert the paused bool
+        if (paused)
+            Time.timeScale = 1;
+        else Time.timeScale = 0;
+        paused = !paused;
+        // if the panel is on, turn it off vise versa
+        pausePanel.SetActive(!pausePanel.activeSelf);
+    }
     void ShowFinalResults()
     {
         myCanvas[0].enabled = false;
         myCanvas[1].enabled = true;
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            playerWinBoxes[i].text = "Player " + (i+1) + " You Placed " + finishOrder[i];
+            playerWinBoxes[i].text = "Player " + (i + 1) + " You Placed " + finishOrder[i];
         }
-       
+
         //stop players from being able to controll there characters and change to the final score canvas showing who won 
     }
 
