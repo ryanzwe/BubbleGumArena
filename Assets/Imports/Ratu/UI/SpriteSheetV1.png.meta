@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 946552952c8b09840a8331d142508df2
-timeCreated: 1524720775
+timeCreated: 1525322602
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -85,11 +85,10 @@ TextureImporter:
     21300156: SpriteSheetV1_93
     21300158: IconChar02
     21300160: Title_Main
-    21300162: SpriteSheetV1_62
+    21300162: slider
     21300164: btPanel1
     21300166: btPanel2
     21300168: ButtonPanel
-  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -143,7 +142,6 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -152,7 +150,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -161,7 +158,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: iPhone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -170,7 +166,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: tvOS
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -179,7 +174,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -188,7 +182,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Tizen
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -197,7 +190,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -206,7 +198,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -215,7 +206,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Samsung TV
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -1346,7 +1336,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpriteSheetV1_62
+      name: slider
       rect:
         serializedVersion: 2
         x: 34
@@ -1368,7 +1358,7 @@ TextureImporter:
         width: 946
         height: 204
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 56, y: 52, z: 57, w: 51}
       outline: []
       physicsShape: []
