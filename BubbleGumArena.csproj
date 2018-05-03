@@ -233,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Imports\Ratu\Environment\RotatorCamShit.cs" />
+    <Compile Include="Assets\rotatorCam.cs" />
     <Compile Include="Assets\Scripts\AbilityBase.cs" />
     <Compile Include="Assets\Scripts\AttackCollision.cs" />
     <Compile Include="Assets\Scripts\DeathBarrier.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\Stagger.cs" />
     <Compile Include="Assets\Scripts\Test_Object_Drop.cs" />
+    <Compile Include="Assets\Scripts\TitleScreenTalk.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\GitHub\Editor\CREDITS.txt" />
