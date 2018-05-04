@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         trans = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        dashForceSpeedOverride = maximumForceSpeed + (dashSpeed * 0.5f);
+        dashForceSpeedOverride = maximumForceSpeed + (dashSpeed);//* 0.5f);
     }
 
     // Update is called once per frame
@@ -87,7 +87,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (jumpForce != 0 && canDash)
             {
-                moveVec += transform.forward * dashSpeed;
+                if (frameGrounded)
+                    moveVec += transform.forward * dashSpeed;
+                else
+                    moveVec += (transform.forward + (transform.up * 3f)) * dashSpeed;
                 StartCoroutine(StartCD());
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVec), rotateSpeed);
@@ -97,8 +100,10 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (jumpForce != 0 && canDash)
             {
-                StartCoroutine(StartCD());
+                moveVec += (transform.forward + transform.up) * dashSpeed;
+                //(trans.forward + (trans.up / myPlayerAttack.knockUp)) * (myPlayerAttack.speed * otherPlayerAttack.AttackMultiplier)
                 rb.AddForce(transform.forward * dashSpeed);
+                StartCoroutine(StartCD());
             }
             // Slow down the player faster
             // Limit the players speed

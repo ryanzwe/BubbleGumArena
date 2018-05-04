@@ -22,7 +22,7 @@ public class AttackCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Debug.Log("Hit" + collision.gameObject.name + attacking);
-        if (collision.transform.CompareTag("Player") && myPlayerAttack.attacking)
+        if (collision.transform.CompareTag("Player") )//&& myPlayerAttack.attacking)
         {
             Player_Attack otherPlayerAttack = collision.gameObject.GetComponent<Player_Attack>();
             

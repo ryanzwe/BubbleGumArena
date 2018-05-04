@@ -7,7 +7,9 @@ public class Player_Attack : MonoBehaviour
     private Transform trans;
     [SerializeField] string attackButton;
     [SerializeField] string attackButtonTwo;
-    [SerializeField] float bump;
+    [SerializeField] bool kissyKissy;
+    //[SerializeField] float bump;
+    [SerializeField] float collisionMod;
     [SerializeField] public float speed;
     [SerializeField] public float knockUp;
     [SerializeField] public float headButtReduce;
@@ -37,10 +39,15 @@ public class Player_Attack : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Debug.Log("Hit" + collision.gameObject.name + attacking);
-        if (collision.transform.CompareTag("Player") )//&& attacking)
+        if (collision.transform.CompareTag("Player") )//&& !attacking)
         {
+            if(kissyKissy)
+                gameObject.transform.LookAt(collision.transform);
+
             Rigidbody body = gameObject.GetComponent<Rigidbody>();
-            body.velocity = new Vector3(0,0,0);
+            //body.AddForce(new Vector3((body.velocity.x * collisionMod), (body.velocity.y * collisionMod), (body.velocity.z * collisionMod)));
+            body.AddForce(transform.forward * collisionMod);
+
             //attacking = false;
         }
     }
