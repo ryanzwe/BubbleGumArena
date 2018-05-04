@@ -72,7 +72,7 @@ public class GameController_GodClass : MonoBehaviour
         {
             PauseHandler(paused);
         }
-
+        FloorDeathBarrirer();
         UpdateDisplay();
         //WhoWins();
         if (knockOutOrder <= 1)

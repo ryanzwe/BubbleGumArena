@@ -34,16 +34,16 @@ public class Player_Attack : MonoBehaviour
         trans = GetComponent<Transform>();
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    // Debug.Log("Hit" + collision.gameObject.name + attacking);
-    //    if (collision.transform.CompareTag("Player") && !attacking)
-    //    {
-    //        Rigidbody otherBody = collision.gameObject.GetComponent<Rigidbody>();
-    //        otherBody.AddForce(trans.forward * bump);
-    //        //attacking = false;
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Debug.Log("Hit" + collision.gameObject.name + attacking);
+        if (collision.transform.CompareTag("Player") && !attacking)
+        {
+            Rigidbody body = gameObject.GetComponent<Rigidbody>();
+            body.AddForce(trans.forward * bump);
+            //attacking = false;
+        }
+    }
 
     void Update()
     {

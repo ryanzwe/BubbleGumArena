@@ -7,16 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool GlobalVarsToggle;
     // movementVars
-    [SerializeField]
-    private float movementSpeed = 600f;
-    [SerializeField]
-    private float fallSpeed = 5f;
-    [SerializeField]
-    private float jumpSpeed = 397f;
-    [SerializeField]
-    private float rotateSpeed = 0.10f;
-    [SerializeField]
-    private float maximumForceSpeed;
+    [SerializeField] private float movementSpeed = 600f;
+    [SerializeField] private float fallSpeed = 5f;
+    [SerializeField] private float jumpSpeed = 397f;
+    [SerializeField] private float rotateSpeed = 0.10f;
+    [SerializeField] private float maximumForceSpeed;
     private bool moving = false;
     //Dashing
     private float dashSpeed = 1500;
@@ -101,7 +96,10 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(moveVec); // X,Y,Z forces
             }
             else if (jumpForce != 0 && canDash)
+            {
+                StartCoroutine(StartCD());
                 rb.AddForce(transform.forward * dashSpeed);
+            }
             // Slow down the player faster
             // Limit the players speed
             if (velocity.magnitude > maximumForceSpeed)
@@ -109,10 +107,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else moving = false;
         // when the player releases a key or stick, slow them to 0 
-        if (Mathf.Abs(horizontalForce) < 0.2f && Mathf.Abs(verticalForce) <= 0.2f && !moving)
-        {
-            rb.velocity = new Vector3(0, 0, 0);
-        }
+        //if (Mathf.Abs(horizontalForce) < 0.2f && Mathf.Abs(verticalForce) <= 0.2f && !moving)
+        //{
+        //    rb.velocity = new Vector3(0, 0, 0);
+        //}
     }
 
     private bool IsGrounded()
