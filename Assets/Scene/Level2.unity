@@ -1686,8 +1686,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389038387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 333.5, y: 187.5, z: 0}
-  m_LocalScale: {x: 0.83375, y: 0.83375, z: 0.83375}
+  m_LocalPosition: {x: 378, y: 212.5, z: 0}
+  m_LocalScale: {x: 0.945, y: 0.945, z: 0.945}
   m_Children:
   - {fileID: 336328317}
   - {fileID: 1719576282}
@@ -3080,6 +3080,7 @@ Transform:
   m_Children:
   - {fileID: 2088350438}
   - {fileID: 2145847502}
+  - {fileID: 1169915001}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3091,9 +3092,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 874075934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280b2a94bfd875c449da130e0e268917, type: 3}
+  m_Script: {fileID: 11500000, guid: b1e2496e83547c54c8951ee1543f2f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRot: 0
+  yRot: 10
+  zRot: 0
 --- !u!1 &906999527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +3870,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4e6eaad132038104fa736b41b102899d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3913,13 +3917,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169914997}
-  m_LocalRotation: {x: -0, y: -0, z: 0.5370222, w: 0.84356815}
-  m_LocalPosition: {x: -13.1, y: 0.83197, z: -0.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.12468905, y: -0.12468908, z: 0.6960263, w: 0.6960263}
+  m_LocalPosition: {x: -10.4, y: 4.3, z: -2.08}
+  m_LocalScale: {x: 2.397453, y: 1, z: 0.8822029}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 64.962006}
+  m_Father: {fileID: 874075935}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -20.313002, z: 90.00001}
 --- !u!1 &1191997891 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100032, guid: 413715ccc5d07a645b55c6c1db847997, type: 3}
@@ -6041,6 +6045,7 @@ MonoBehaviour:
   - {fileID: 1352266536}
   - {fileID: 753342647}
   - {fileID: 187450096}
+  deathHeight: 0
   maxMultiplier: 2
   pausePanel: {fileID: 0}
 --- !u!23 &1881561384
@@ -6872,6 +6877,7 @@ MonoBehaviour:
   - {fileID: 1352266536}
   - {fileID: 753342647}
   - {fileID: 187450096}
+  deathHeight: 0
   maxMultiplier: 10
   pausePanel: {fileID: 0}
 --- !u!4 &2145847502 stripped
