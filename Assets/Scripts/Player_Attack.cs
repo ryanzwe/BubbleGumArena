@@ -37,10 +37,10 @@ public class Player_Attack : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Debug.Log("Hit" + collision.gameObject.name + attacking);
-        if (collision.transform.CompareTag("Player") && !attacking)
+        if (collision.transform.CompareTag("Player") )//&& attacking)
         {
             Rigidbody body = gameObject.GetComponent<Rigidbody>();
-            body.AddForce(trans.forward * bump);
+            body.velocity = new Vector3(0,0,0);
             //attacking = false;
         }
     }
