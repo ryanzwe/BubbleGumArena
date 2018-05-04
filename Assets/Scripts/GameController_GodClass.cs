@@ -6,27 +6,20 @@ using UnityEngine.UI;
 public class GameController_GodClass : MonoBehaviour
 {
     //[SerializeField] GameObject[] players = new GameObject[4];
-    [SerializeField]
-    int numberofPlay = 1;
-    [SerializeField]
-    Player_Attack[] players = new Player_Attack[4];
-    [SerializeField]
-    GameObject[] playerObjects = new GameObject[4];
+    [SerializeField] int numberofPlay = 1;
+    [SerializeField] Player_Attack[] players = new Player_Attack[4];
+    [SerializeField] GameObject[] playerObjects = new GameObject[4];
     private MyPlayers[] myPlayers;
-    [SerializeField]
-    Canvas[] myCanvas = new Canvas[2];
-    [SerializeField]
-    Text[] playerWinBoxes = new Text[4];
-    [SerializeField]
-    Text[] playerHPPercent = new Text[4];
-    [SerializeField]
-    float maxMultiplier; //
+    [SerializeField] Canvas[] myCanvas = new Canvas[2];
+    [SerializeField] Text[] playerWinBoxes = new Text[4];
+    [SerializeField] Text[] playerHPPercent = new Text[4];
+    [SerializeField] float deathHeight;
+    [SerializeField] float maxMultiplier; //
     private int[] finishOrder = new int[4];
     private int knockOutOrder = 4;
     private int numberOfPlayers;
     private bool paused = false;
-    [SerializeField]
-    private GameObject pausePanel;
+    [SerializeField] private GameObject pausePanel;
     void Start()
     {
         myCanvas[1].enabled = false;
@@ -49,8 +42,25 @@ public class GameController_GodClass : MonoBehaviour
         {
             if (WhoWins(hit.gameObject.GetComponent<PlayerStats>().playerID))
             {
+                myPlayers[hit.gameObject.GetComponent<PlayerStats>().playerID].playerAttack.AttackMultiplier = 1f;
                 hit.gameObject.GetComponent<PlayerStats>().Respawn();
                 hit.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+        }
+    }
+
+    void FloorDeathBarrirer()
+    {
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
+            if (myPlayers[i].transform.position.y <= deathHeight)
+            {
+                if (WhoWins(i) == true && myPlayers[i].isAlive == true)
+                {
+                    myPlayers[i].playerAttack.AttackMultiplier = 1f;
+                    playerObjects[i].GetComponent<PlayerStats>().Respawn();
+                    playerObjects[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                }
             }
         }
     }
