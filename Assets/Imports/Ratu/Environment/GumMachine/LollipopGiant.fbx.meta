@@ -58,7 +58,8 @@ ModelImporter:
     400048: Wrist_L_jnt
     400050: Wrist_R_jnt
     4300000: LollipopMan
-    7400000: Take 001
+    7400000: LollipopFull
+    7400002: LollipopIdle
     9500000: //RootNode
     13700000: LollipopMan
   externalObjects:
@@ -94,10 +95,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: LollipopFull
       takeName: Take 001
       firstFrame: 0
       lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LollipopIdle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
