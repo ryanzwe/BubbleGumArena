@@ -9,6 +9,7 @@ public class GameController_GodClass : MonoBehaviour
     [SerializeField] int numberofPlay = 1;
     [SerializeField] Player_Attack[] players = new Player_Attack[4];
     [SerializeField] GameObject[] playerObjects = new GameObject[4];
+    [SerializeField] GameObject[] winingSpots = new GameObject[4];
     private MyPlayers[] myPlayers;
     [SerializeField] Canvas[] myCanvas = new Canvas[2];
     [SerializeField] Text[] playerWinBoxes = new Text[4];
@@ -110,7 +111,14 @@ public class GameController_GodClass : MonoBehaviour
         myCanvas[1].enabled = true;
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            playerWinBoxes[i].text = "Player " + (i + 1) + " You Placed " + finishOrder[i];
+            playerObjects[i].transform.parent = winingSpots[finishOrder[i]-1].transform;
+            playerObjects[i].transform.GetComponent<Rigidbody>().isKinematic = true;
+            playerObjects[i].transform.GetComponent<Rigidbody>().useGravity = false;
+            playerObjects[i].transform.localPosition = new Vector3(0,0,0);
+            playerObjects[i].transform.localRotation = Quaternion.Euler(0,0,0);
+            playerObjects[i].transform.localScale = new Vector3(1, 1, 1);
+
+            playerWinBoxes[finishOrder[i]-1].text = "Player " + (i + 1) + " You Placed " + finishOrder[i];
         }
 
         //stop players from being able to controll there characters and change to the final score canvas showing who won 
@@ -139,9 +147,9 @@ public class GameController_GodClass : MonoBehaviour
     {
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            if (myPlayers[i].playerAttack.AttackMultiplier >= maxMultiplier)
-                playerHPPercent[i].text = "TOO HIGH";
-            playerHPPercent[i].text = myPlayers[i].playerAttack.AttackMultiplier.ToString();
+            //if (myPlayers[i].playerAttack.AttackMultiplier >= maxMultiplier)
+            //    playerHPPercent[i].text = "TOO HIGH";
+            playerHPPercent[i].text = (myPlayers[i].playerAttack.AttackMultiplier * 100).ToString() + "%";
         }
     }
 }
