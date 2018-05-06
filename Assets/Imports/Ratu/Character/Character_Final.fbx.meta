@@ -229,7 +229,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle1_MM
       takeName: Take 001
-      firstFrame: 0
+      firstFrame: 250
       lastFrame: 300
       wrapMode: 0
       orientationOffsetY: 0
@@ -237,7 +237,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -257,8 +257,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle2_MM
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 300
+      firstFrame: 186
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
