@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 5a0226821f60f124ca11715465cf2de0,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -3468,10 +3469,10 @@ MonoBehaviour:
   attackButtonTwo: Player_2_Fire2
   kissyKissy: 0
   collisionMod: 600
-  speed: 5000
+  speed: 8500
   knockUp: 1
   headButtReduce: 0.8
-  attackMultiEffector: 0.1
+  attackMultiEffector: 0.25
   attacking: 0
   anim: {fileID: 971425859}
 --- !u!136 &424518878
@@ -6494,10 +6495,10 @@ MonoBehaviour:
   attackButtonTwo: Player_4_Fire2
   kissyKissy: 0
   collisionMod: 600
-  speed: 5000
+  speed: 8500
   knockUp: 1
   headButtReduce: 0.8
-  attackMultiEffector: 0.1
+  attackMultiEffector: 0.25
   attacking: 0
   anim: {fileID: 1156483184}
 --- !u!136 &962087168
@@ -9752,10 +9753,10 @@ MonoBehaviour:
   attackButtonTwo: Player_3_Fire2
   kissyKissy: 0
   collisionMod: 600
-  speed: 5000
+  speed: 8500
   knockUp: 1
   headButtReduce: 0.8
-  attackMultiEffector: 0.1
+  attackMultiEffector: 0.25
   attacking: 0
   anim: {fileID: 1066607366}
 --- !u!136 &1521880277
@@ -9997,10 +9998,10 @@ MonoBehaviour:
   attackButtonTwo: Player_1_Fire2
   kissyKissy: 0
   collisionMod: 600
-  speed: 5000
+  speed: 8500
   knockUp: 1
   headButtReduce: 0.8
-  attackMultiEffector: 0.1
+  attackMultiEffector: 0.25
   attacking: 0
   anim: {fileID: 1228587119}
 --- !u!136 &1566109563
@@ -11303,7 +11304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723408223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.9, z: 0}
+  m_LocalPosition: {x: 0, y: 30.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 35269755}
@@ -11319,7 +11320,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 3.9
   m_Range: 140.83533
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -12557,7 +12558,7 @@ MonoBehaviour:
   - {fileID: 753342647}
   - {fileID: 187450096}
   deathHeight: -14
-  maxMultiplier: 2
+  maxMultiplier: 1.5
   pausePanel: {fileID: 1347764053}
 --- !u!23 &1881561384
 MeshRenderer:
