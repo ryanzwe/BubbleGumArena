@@ -180,6 +180,7 @@ QualitySettings:
     Nintendo Switch: 5
     PS4: 5
     PSP2: 2
+    Samsung TV: 0
     Standalone: 5
     Tizen: 2
     WebGL: 3

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2153,8 +2153,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389038387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 375, y: 211, z: 0}
-  m_LocalScale: {x: 0.9375, y: 0.9375, z: 0.9375}
+  m_LocalPosition: {x: 340.5, y: 191.5, z: 0}
+  m_LocalScale: {x: 0.85125, y: 0.85125, z: 0.85125}
   m_Children:
   - {fileID: 336328317}
   - {fileID: 1719576282}
@@ -2382,7 +2382,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 563322137
+  randomSeed: 530203464
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8208,8 +8208,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.5441177, g: 1, b: 0.58498985, a: 1}
-  m_Intensity: 10
-  m_Range: 15
+  m_Intensity: 7.9
+  m_Range: 14.43
   m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
@@ -8862,8 +8862,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.36764705, g: 1, b: 0.5028397, a: 1}
-  m_Intensity: 10
-  m_Range: 15
+  m_Intensity: 7.9
+  m_Range: 14.43
   m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
@@ -10943,6 +10943,11 @@ MonoBehaviour:
   - {fileID: 317727930}
   - {fileID: 1935181290}
   - {fileID: 1231954390}
+  winingSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   myCanvas:
   - {fileID: 389038390}
   - {fileID: 813822603}
@@ -11618,7 +11623,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1219584298
+  randomSeed: 124585720
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15416,6 +15421,11 @@ MonoBehaviour:
   - {fileID: 317727930}
   - {fileID: 1935181290}
   - {fileID: 1231954390}
+  winingSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   myCanvas:
   - {fileID: 0}
   - {fileID: 0}
