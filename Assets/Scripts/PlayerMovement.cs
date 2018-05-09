@@ -7,13 +7,22 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool GlobalVarsToggle;
     // movementVars
-    [SerializeField] private float movementSpeed = 600f;
-    [SerializeField] private float fallSpeed = 5f;
-    [SerializeField] private float jumpSpeed = 397f;
-    [SerializeField] private float rotateSpeed = 0.10f;
-    [SerializeField] private float maximumForceSpeed;
+    [SerializeField]
+    private float movementSpeed = 600f;
+    [SerializeField]
+    private float fallSpeed = 5f;
+    [SerializeField]
+    private float jumpSpeed = 397f;
+    [SerializeField]
+    private float rotateSpeed = 0.10f;
+    [SerializeField]
+    private float maximumForceSpeed;
     private bool moving = false;
+    [SerializeField]
+    private float timeTillFallMultipler = 1f;
+    private float fallTimer;
     //Dashing
+    [SerializeField]
     private float dashSpeed = 1500;
     [SerializeField]
     private float dashCD = 3f;
@@ -65,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
         dashForceSpeedOverride = maximumForceSpeed + (dashSpeed);//* 0.5f);
+        fallTimer = timeTillFallMultipler;
     }
 
     // Update is called once per frame
@@ -74,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
         float horizontalForce = Input.GetAxis(HorizontalAxis);
         float verticalForce = Input.GetAxis(VerticalAxis);
         float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
+        Debug.Log(jumpForce);
+        bool frameGrounded = IsGrounded();
         if (Input.GetAxis(HorizontalAxis) != 0 || Input.GetAxis(VerticalAxis) != 0)
         {
             moving = true;
@@ -81,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3 velocity = rb.velocity;
             //Debug.Log("velocity: " + velocity.magnitude);
             // Player movement
-            bool frameGrounded = IsGrounded();
             Debug.Log(frameGrounded);
             Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
 
@@ -92,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                     moveVec += (transform.forward + (transform.up * 3f)) * dashSpeed;
                 StartCoroutine(StartCD());
+                Debug.Log(moveVec);
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVec), rotateSpeed);
             if (frameGrounded)
@@ -99,10 +111,10 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(moveVec); // X,Y,Z forces
             }
             else if (jumpForce != 0 && canDash)
-            {
-                moveVec += (transform.forward + transform.up) * dashSpeed;
+            { 
+                moveVec += (transform.forward + (transform.up * 3)) * dashSpeed;
                 //(trans.forward + (trans.up / myPlayerAttack.knockUp)) * (myPlayerAttack.speed * otherPlayerAttack.AttackMultiplier)
-                rb.AddForce(transform.forward * dashSpeed);
+                rb.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
                 StartCoroutine(StartCD());
             }
             // Slow down the player faster
@@ -116,6 +128,15 @@ public class PlayerMovement : MonoBehaviour
         //{
         //    rb.velocity = new Vector3(0, 0, 0);
         //}
+
+        if (!frameGrounded)
+        {
+            fallTimer -= Time.deltaTime;
+            if (fallTimer <= 0)
+                rb.velocity += Vector3.down * GameController_GodClass.Instance.gravityMultiplier;
+        }
+        else fallTimer = 1f;
+
     }
 
     private bool IsGrounded()
@@ -132,16 +153,16 @@ public class PlayerMovement : MonoBehaviour
         return false;
 
     }
-
     private IEnumerator StartCD()
     {
-        float tempForce = maximumForceSpeed;
+        float tempforce = maximumForceSpeed;
+        canDash = false;
         maximumForceSpeed = dashForceSpeedOverride;
         yield return new WaitForSeconds(0.2f);
-        maximumForceSpeed = tempForce;
+        maximumForceSpeed = tempforce;
         yield return null;
-        canDash = false;
         yield return new WaitForSeconds(dashCD);
         canDash = true;
+        tempforce = 0;
     }
 }

@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class GameController_GodClass : MonoBehaviour
 {
     //[SerializeField] GameObject[] players = new GameObject[4];
+    private static GameController_GodClass instance;
+    public static GameController_GodClass Instance
+    {
+        get { return instance; }
+    }
+    public float gravityMultiplier = 2f;
     [SerializeField] int numberofPlay = 1;
     [SerializeField] Player_Attack[] players = new Player_Attack[4];
     [SerializeField] GameObject[] playerObjects = new GameObject[4];
@@ -21,6 +27,10 @@ public class GameController_GodClass : MonoBehaviour
     private int numberOfPlayers;
     private bool paused = false;
     [SerializeField] private GameObject pausePanel;
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         myCanvas[1].enabled = false;
