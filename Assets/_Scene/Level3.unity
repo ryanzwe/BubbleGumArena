@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -528,6 +528,11 @@ Prefab:
       propertyPath: m_Name
       value: CandyRock1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f8f588f8ce36b419820f146602a90f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -1035,6 +1040,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f8f588f8ce36b419820f146602a90f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -1093,6 +1103,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4be2b607b553368469e8e3f6aa11ac13, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -1480,6 +1495,8 @@ MonoBehaviour:
   jumpSpeed: 397
   rotateSpeed: 0.1
   maximumForceSpeed: 7
+  timeTillFallMultipler: 1
+  dashSpeed: 1500
   dashCD: 3
   canDash: 1
   HorizontalAxis: Player_2_Horizontal
@@ -1779,6 +1796,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23099462388777090, guid: 8bc5d3e8bcf669f459fa86c56273933b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0e34ab8f15c0b24787323ed5b10019c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bc5d3e8bcf669f459fa86c56273933b, type: 2}
   m_IsPrefabParent: 0
@@ -1829,6 +1851,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -50.684002
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f8f588f8ce36b419820f146602a90f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -2427,7 +2454,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 530203464
+  randomSeed: 1254860805
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2517,7 +2544,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.57439446, g: 0.7590503, b: 0.9411765, a: 1}
+      maxColor: {r: 0.9983773, g: 0.88235295, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2579,7 +2606,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 11
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5691,7 +5718,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 425656169}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.180876, y: -5.0000005, z: 30.6}
+  m_LocalPosition: {x: 11.180876, y: 0.3, z: 30.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6577,6 +6604,11 @@ Prefab:
       propertyPath: m_Name
       value: CandyRock1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f8f588f8ce36b419820f146602a90f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -8698,6 +8730,8 @@ MonoBehaviour:
   jumpSpeed: 397
   rotateSpeed: 0.1
   maximumForceSpeed: 7
+  timeTillFallMultipler: 1
+  dashSpeed: 1500
   dashCD: 3
   canDash: 1
   HorizontalAxis: Player_4_Horizontal
@@ -8931,6 +8965,11 @@ Prefab:
       propertyPath: m_Name
       value: CandyRock1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41f8f588f8ce36b419820f146602a90f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -9083,6 +9122,11 @@ Prefab:
       propertyPath: m_Name
       value: CandyRock1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0e34ab8f15c0b24787323ed5b10019c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -9862,6 +9906,8 @@ MonoBehaviour:
   jumpSpeed: 397
   rotateSpeed: 0.1
   maximumForceSpeed: 7
+  timeTillFallMultipler: 1
+  dashSpeed: 1500
   dashCD: 3
   canDash: 1
   HorizontalAxis: Player_1_Horizontal
@@ -10976,7 +11022,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: aa3951982d7ec8d4cba7851e59bd610a, type: 2}
+  - {fileID: 2100000, guid: a0e34ab8f15c0b24787323ed5b10019c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11365,6 +11411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f098b1528840fc64ba3165a344a705f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityMultiplier: 2
   numberofPlay: 4
   players:
   - {fileID: 1566109562}
@@ -11802,6 +11849,8 @@ MonoBehaviour:
   jumpSpeed: 397
   rotateSpeed: 0.1
   maximumForceSpeed: 7
+  timeTillFallMultipler: 1
+  dashSpeed: 1500
   dashCD: 3
   canDash: 1
   HorizontalAxis: Player_3_Horizontal
@@ -11931,6 +11980,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23985947064131498, guid: cdfebdeae332a32458db37c602c21897,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4be2b607b553368469e8e3f6aa11ac13, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdfebdeae332a32458db37c602c21897, type: 2}
   m_IsPrefabParent: 0
@@ -12074,7 +12128,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 124585720
+  randomSeed: 2061722389
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12164,7 +12218,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5384948, g: 0.6120093, b: 0.88235295, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -12226,7 +12280,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 20
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -12525,7 +12579,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -90.22, y: 0, z: 0}
-    m_Scale: {x: 300, y: 1.59, z: 14.88}
+    m_Scale: {x: 500, y: 1.59, z: 14.88}
     placementMode: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
@@ -15338,7 +15392,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1956758616}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.180876, y: -8.1, z: 217.3}
+  m_LocalPosition: {x: 11.180876, y: -6.6, z: 217.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15906,6 +15960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f098b1528840fc64ba3165a344a705f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityMultiplier: 2
   numberofPlay: 4
   players:
   - {fileID: 1566109562}
