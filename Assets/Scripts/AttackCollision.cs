@@ -9,9 +9,10 @@ public class AttackCollision : MonoBehaviour
     [SerializeField] private Transform trans;
     [SerializeField] Player_Attack myPlayerAttack;
     [SerializeField] bool isHead = false;
-
+    private AudioSource aud;
     void Start()
     {
+        aud = GetComponent<AudioSource>();
         //trans = GetComponent<Transform>();
         foreach (Collider playerColliders in RootCollider)//goes through all the other colliders on the player and makes them unable to hit eachother
         {
@@ -37,6 +38,7 @@ public class AttackCollision : MonoBehaviour
                 otherBody.AddForce((trans.forward + (trans.up / (myPlayerAttack.knockUp) * myPlayerAttack.headButtReduce)) * ((myPlayerAttack.speed * myPlayerAttack.headButtReduce) * otherPlayerAttack.AttackMultiplier));
                 otherPlayerAttack.AttackMultiplier = 1f;
             }
+            aud.Play();
             //attacking = false;
         }
     }
