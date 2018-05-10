@@ -1,23 +1,54 @@
 fileFormatVersion: 2
-guid: f0b76f50db14536469f2ceae235154ca
-timeCreated: 1525859505
+guid: bdbb20c01e3281148a55d977ab78f752
+timeCreated: 1525914498
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box137
-    7400000: FloatingRock
+    100000: Arm_R2
+    100002: Arm_R_1
+    100004: Ballon_Man
+    100006: //RootNode
+    100008: Center_1
+    100010: Center_2
+    100012: clavicle_L
+    100014: clavicle_R
+    100016: end_L
+    100018: end_R
+    100020: end_spine
+    100022: L_arm_1
+    100024: L_arm_2
+    100026: L_hand
+    100028: r_hand
+    100030: spine_1
+    100032: Spine_2
+    400000: Arm_R2
+    400002: Arm_R_1
+    400004: Ballon_Man
+    400006: //RootNode
+    400008: Center_1
+    400010: Center_2
+    400012: clavicle_L
+    400014: clavicle_R
+    400016: end_L
+    400018: end_R
+    400020: end_spine
+    400022: L_arm_1
+    400024: L_arm_2
+    400026: L_hand
+    400028: r_hand
+    400030: spine_1
+    400032: Spine_2
+    4300000: Ballon_Man
+    7400000: Take 001
     9500000: //RootNode
+    13700000: Ballon_Man
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 03 - Default
-    second: {fileID: 2100000, guid: 0ae5f1ff6f887e14ba15343e9dae20b2, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 85a92264ca881ae42beb80e0fdaceddf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,35 +74,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: FloatingRock
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 320
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

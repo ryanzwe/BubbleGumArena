@@ -1,23 +1,72 @@
 fileFormatVersion: 2
-guid: f0b76f50db14536469f2ceae235154ca
-timeCreated: 1525859505
+guid: a63a66b24c71dc046a5fcc4c0ae9fad8
+timeCreated: 1525912613
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box137
-    7400000: FloatingRock
+    100000: Arm_R2
+    100002: Arm_R_1
+    100004: Ballon_Man
+    100006: //RootNode
+    100008: Center_1
+    100010: Center_2
+    100012: clavicle_L
+    100014: clavicle_R
+    100016: Cylinder.001
+    100018: elbow_L
+    100020: elbow_R
+    100022: end_L
+    100024: end_R
+    100026: end_spine
+    100028: L_arm_1
+    100030: L_arm_2
+    100032: L_hand
+    100034: r_hand
+    100036: shoulder_L
+    100038: shoulder_R
+    100040: spine_1
+    100042: Spine_2
+    400000: Arm_R2
+    400002: Arm_R_1
+    400004: Ballon_Man
+    400006: //RootNode
+    400008: Center_1
+    400010: Center_2
+    400012: clavicle_L
+    400014: clavicle_R
+    400016: Cylinder.001
+    400018: elbow_L
+    400020: elbow_R
+    400022: end_L
+    400024: end_R
+    400026: end_spine
+    400028: L_arm_1
+    400030: L_arm_2
+    400032: L_hand
+    400034: r_hand
+    400036: shoulder_L
+    400038: shoulder_R
+    400040: spine_1
+    400042: Spine_2
+    2300000: Cylinder.001
+    3300000: Cylinder.001
+    4300000: Cylinder.001
+    4300002: Ballon_Man
+    7400000: BallonManIdle
     9500000: //RootNode
+    13700000: Ballon_Man
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 03 - Default
-    second: {fileID: 2100000, guid: 0ae5f1ff6f887e14ba15343e9dae20b2, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 11640c2072f7ec34d869c418995be70b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 13e45e36848958c49aeb337c0f31038e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,10 +94,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: FloatingRock
+      name: BallonManIdle
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 320
+      firstFrame: 1
+      lastFrame: 300
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

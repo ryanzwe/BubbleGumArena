@@ -1,23 +1,69 @@
 fileFormatVersion: 2
-guid: f0b76f50db14536469f2ceae235154ca
-timeCreated: 1525859505
+guid: 0f75c58b3361b0a409f90fb341f503e4
+timeCreated: 1525913400
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box137
-    7400000: FloatingRock
+    100000: Arm_1_L_jnt
+    100002: Arm_1_R_jnt
+    100004: Arm_2_L_jnt
+    100006: Arm_2_R_jnt
+    100008: Body_jnt
+    100010: Bodyend_jnt
+    100012: Foot1_L_jnt
+    100014: Foot1_R_jnt
+    100016: Ginger_L_jnt
+    100018: Ginger_R_jnt
+    100020: Hand_L_jnt
+    100022: Hand_R_jnt
+    100024: Leg_L_1_jnt
+    100026: Leg_L_2_jnt
+    100028: Leg_L_3_jnt
+    100030: Leg_R_1_jnt
+    100032: Leg_R_2_jnt
+    100034: Leg_R_3_jnt
+    100036: SodaBoy1
+    100038: //RootNode
+    100040: ToeEnd_L_jnt
+    100042: ToeEnd_R_jnt
+    100044: Wrist_L_jnt
+    100046: Wrist_R_jnt
+    400000: Arm_1_L_jnt
+    400002: Arm_1_R_jnt
+    400004: Arm_2_L_jnt
+    400006: Arm_2_R_jnt
+    400008: Body_jnt
+    400010: Bodyend_jnt
+    400012: Foot1_L_jnt
+    400014: Foot1_R_jnt
+    400016: Ginger_L_jnt
+    400018: Ginger_R_jnt
+    400020: Hand_L_jnt
+    400022: Hand_R_jnt
+    400024: Leg_L_1_jnt
+    400026: Leg_L_2_jnt
+    400028: Leg_L_3_jnt
+    400030: Leg_R_1_jnt
+    400032: Leg_R_2_jnt
+    400034: Leg_R_3_jnt
+    400036: SodaBoy1
+    400038: //RootNode
+    400040: ToeEnd_L_jnt
+    400042: ToeEnd_R_jnt
+    400044: Wrist_L_jnt
+    400046: Wrist_R_jnt
+    4300000: SodaBoy1
+    7400000: drown
+    7400002: idle
     9500000: //RootNode
+    13700000: SodaBoy1
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 03 - Default
-    second: {fileID: 2100000, guid: 0ae5f1ff6f887e14ba15343e9dae20b2, type: 2}
+      name: SodaBoy
+    second: {fileID: 2100000, guid: a37252c7e36a84540bb5230f13440684, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,10 +91,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: FloatingRock
+      name: drown
+      takeName: Take 001
+      firstFrame: 52
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 320
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
