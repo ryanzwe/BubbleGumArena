@@ -15,6 +15,8 @@ public class Player_Attack : MonoBehaviour
     [SerializeField] public float headButtReduce;
     [SerializeField] float attackMultiEffector = 1;
     //[SerializeField] private 
+    public int lastPlayerToHitMe = -1;
+    public int playerID = -1;
     public bool attacking;
     [SerializeField] Animator anim;
     //[SerializeField] private Collider RootCollider;

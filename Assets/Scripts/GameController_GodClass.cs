@@ -21,7 +21,10 @@ public class GameController_GodClass : MonoBehaviour
     [SerializeField] Text[] playerWinBoxes = new Text[4];
     [SerializeField] Text[] playerHPPercent = new Text[4];
     [SerializeField] float deathHeight;
-    [SerializeField] float maxMultiplier; //
+    [SerializeField] bool gameMode = false;
+    [SerializeField] int kingOfTheHillMaxScore;
+    [SerializeField] float maxMultiplier;
+    [SerializeField] int[] playerSocres = new int[4]{ 0, 0, 0, 0 };
     private int[] finishOrder = new int[4];
     private int knockOutOrder = 4;
     private int numberOfPlayers;
@@ -40,7 +43,7 @@ public class GameController_GodClass : MonoBehaviour
         myPlayers = new MyPlayers[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            playerObjects[i].GetComponent<PlayerStats>().playerID = i;
+            playerObjects[i].GetComponent<Player_Attack>().playerID = i;
             myPlayers[i] = new MyPlayers(players[i], true, playerObjects[i].transform);
         }
         //use player prefs to set player number then enable and disable ui and the character based on the number.
@@ -71,6 +74,7 @@ public class GameController_GodClass : MonoBehaviour
                     myPlayers[i].playerAttack.AttackMultiplier = 1f;
                     playerObjects[i].GetComponent<PlayerStats>().Respawn();
                     playerObjects[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    playerSocres[players[i].lastPlayerToHitMe] += 1;
                 }
             }
         }
@@ -85,6 +89,8 @@ public class GameController_GodClass : MonoBehaviour
         }
         FloorDeathBarrirer();
         UpdateDisplay();
+        if (gameMode)
+            KingOfTheHill();
         //WhoWins();
         if (knockOutOrder <= 1)
         {
@@ -103,6 +109,67 @@ public class GameController_GodClass : MonoBehaviour
 
 
     }
+    //other game mode is called survival 
+    void KingOfTheHill()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if(playerSocres[i] >= kingOfTheHillMaxScore)
+            {
+                KingOfTheWinOrder();
+                ShowFinalResults();
+            }
+        }
+    }
+
+    void KingOfTheWinOrder()
+    {
+        int highScore = 0;
+        int firstRef = -1;
+        int secondRef = -1;
+        int thirdRef = -1;
+        int fourthRef = -1;
+        for (int j = 0; j < playerSocres.Length; j++)
+        {
+            if (playerSocres[j] > highScore)
+            {
+                highScore = playerSocres[j];
+                firstRef = j;
+            }
+        }
+        highScore = 0;
+        for (int j = 0; j < playerSocres.Length; j++)
+        {
+            if (playerSocres[j] > highScore && j != firstRef)
+            {
+                highScore = playerSocres[j];
+                secondRef = j;
+            }
+        }
+        highScore = 0;
+        for (int j = 0; j < playerSocres.Length; j++)
+        {
+            if (playerSocres[j] > highScore && j != firstRef && j != secondRef)
+            {
+                highScore = playerSocres[j];
+                thirdRef = j;
+            }
+        }
+        highScore = 0;
+        for (int j = 0; j < playerSocres.Length; j++)
+        {
+            if (playerSocres[j] > highScore && j != firstRef && j != secondRef && j != thirdRef)
+            {
+                highScore = playerSocres[j];
+                fourthRef = j;
+            }
+        }
+        finishOrder[firstRef] = 1;
+        finishOrder[secondRef] = 2;
+        finishOrder[thirdRef] = 3;
+        finishOrder[fourthRef] = 4;
+    }
+
     public void PauseHandler(bool pause = false)
     {
         // inspector
@@ -138,6 +205,7 @@ public class GameController_GodClass : MonoBehaviour
     {
         //for (int i = 0; i < numberOfPlayers; i++)
         //{
+
         if (myPlayers[playerID].playerAttack.AttackMultiplier >= maxMultiplier && myPlayers[playerID].isAlive == true)
         {
             //when the player falls off the map disable the players move and move the character off screen
