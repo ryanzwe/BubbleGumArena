@@ -1493,6 +1493,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 397
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -2225,8 +2229,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389038387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 306.5, y: 172.5, z: 0}
-  m_LocalScale: {x: 0.76625, y: 0.76625, z: 0.76625}
+  m_LocalPosition: {x: 340.5, y: 191.5, z: 0}
+  m_LocalScale: {x: 0.85125, y: 0.85125, z: 0.85125}
   m_Children:
   - {fileID: 336328317}
   - {fileID: 1719576282}
@@ -5971,6 +5975,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 572694114}
+--- !u!1001 &615903623
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1850990842}
+    m_Modifications:
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11640c2072f7ec34d869c418995be70b, type: 2}
+    - target: {fileID: 9500000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bc0459831958e47449ba4d0ddbc5635b, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+  m_IsPrefabParent: 0
 --- !u!4 &619352542
 Transform:
   m_ObjectHideFlags: 0
@@ -7235,6 +7289,7 @@ Transform:
   - {fileID: 1337547106}
   - {fileID: 999869386}
   - {fileID: 266336312}
+  - {fileID: 1850990842}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8728,6 +8783,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 397
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -9904,6 +9963,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 397
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -9914,6 +9977,10 @@ MonoBehaviour:
   JumpAxis: Player_1_Jump
   VerticalAxis: Player_1_Vertical
   anim: {fileID: 1228587119}
+--- !u!4 &1579775800 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: c04071a3dba8d47428f73931a9bbf02f, type: 3}
+  m_PrefabInternal: {fileID: 615903623}
 --- !u!1001 &1580250462
 Prefab:
   m_ObjectHideFlags: 0
@@ -11284,6 +11351,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4326813625531208, guid: 8bc5d3e8bcf669f459fa86c56273933b,
     type: 2}
   m_PrefabInternal: {fileID: 108094988}
+--- !u!1 &1850990841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1850990842}
+  m_Layer: 0
+  m_Name: BalloonManHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850990842
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850990841}
+  m_LocalRotation: {x: -0, y: -0.9999267, z: -0, w: -0.012110609}
+  m_LocalPosition: {x: 0.49939632, y: -10.9, z: 19.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1579775800}
+  m_Father: {fileID: 874075935}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: -181.38799, z: 0}
 --- !u!1 &1880802268
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,6 +11943,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 397
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
