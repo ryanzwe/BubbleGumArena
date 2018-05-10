@@ -13,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
     private float fallSpeed = 5f;
     [SerializeField]
     private float jumpSpeed = 397f;
+    [SerializeField] float jumpAngleAdjust;
+    [SerializeField] private float dashDuration;
+    [SerializeField]
+    float fallDelay;
+    [SerializeField] float deadZone;
     [SerializeField]
     private float rotateSpeed = 0.10f;
     [SerializeField]
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private int terrainLayer = 1 << 8;
     [SerializeField]
     private Animator anim;
+
     // Subscribe to the movement update event
     private void OnEnable()
     {
@@ -84,39 +90,56 @@ public class PlayerMovement : MonoBehaviour
         float horizontalForce = Input.GetAxis(HorizontalAxis);
         float verticalForce = Input.GetAxis(VerticalAxis);
         float jumpForce = Input.GetAxis(JumpAxis);// If the player is grounded, check for input axis, else 0 
-        Debug.Log(jumpForce);
+        //Debug.Log(jumpForce);
         bool frameGrounded = IsGrounded();
-        if (Input.GetAxis(HorizontalAxis) != 0 || Input.GetAxis(VerticalAxis) != 0)
+        if (Input.GetAxis(HorizontalAxis) > deadZone || Input.GetAxis(VerticalAxis) > deadZone || Input.GetAxis(HorizontalAxis) < -deadZone || Input.GetAxis(VerticalAxis) < -deadZone)
         {
             moving = true;
             // Used to prevent uncecessary calls
             Vector3 velocity = rb.velocity;
             //Debug.Log("velocity: " + velocity.magnitude);
             // Player movement
-            Debug.Log(frameGrounded);
-            Vector3 moveVec = new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
-
+            //Debug.Log(frameGrounded);
+            Vector3 moveVec = new Vector3(0, 0, 0);
+            Vector3 lookVec = new Vector3(0, 0, 0);
+            if(horizontalForce > deadZone || horizontalForce < -deadZone)
+                lookVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
+            if (verticalForce > deadZone || verticalForce < -deadZone)
+                lookVec += new Vector3(0, 0, verticalForce) * movementSpeed;
             if (jumpForce != 0 && canDash)
             {
                 if (frameGrounded)
                     moveVec += transform.forward * dashSpeed;
                 else
-                    moveVec += (transform.forward + (transform.up * 3f)) * dashSpeed;
+                {
+                    moveVec += (transform.forward + (transform.up * jumpAngleAdjust)) * jumpSpeed;
+                    lookVec += (transform.forward + (transform.up * jumpAngleAdjust)) * jumpSpeed;
+                    fallTimer = fallDelay;
+                }
                 StartCoroutine(StartCD());
-                Debug.Log(moveVec);
+                //Debug.Log(moveVec);
             }
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVec), rotateSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookVec), rotateSpeed);
             if (frameGrounded)
             {
-                rb.AddForce(moveVec); // X,Y,Z forces
+                if (horizontalForce > deadZone || horizontalForce < -deadZone)
+                    moveVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
+                if (verticalForce > deadZone || verticalForce < -deadZone)
+                    moveVec += new Vector3(0, 0, verticalForce) * movementSpeed;
+
+                //moveVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
+                //rb.AddForce(moveVec); // X,Y,Z forces
             }
             else if (jumpForce != 0 && canDash)
-            { 
-                moveVec += (transform.forward + (transform.up * 3)) * dashSpeed;
+            {
+                //moveVec += (transform.forward + (transform.up * 3)) * dashSpeed;
                 //(trans.forward + (trans.up / myPlayerAttack.knockUp)) * (myPlayerAttack.speed * otherPlayerAttack.AttackMultiplier)
-                rb.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
+                rb.AddForce(transform.forward * jumpSpeed, ForceMode.Impulse);
                 StartCoroutine(StartCD());
             }
+
+            rb.AddForce(moveVec); // X,Y,Z forces
+
             // Slow down the player faster
             // Limit the players speed
             if (velocity.magnitude > maximumForceSpeed)
@@ -135,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
             if (fallTimer <= 0)
                 rb.velocity += Vector3.down * GameController_GodClass.Instance.gravityMultiplier;
         }
-        else fallTimer = 1f;
+        else fallTimer = fallDelay;
 
     }
 
@@ -146,10 +169,10 @@ public class PlayerMovement : MonoBehaviour
         //Debug.DrawRay(pos, -transform.up * 0.5f, Color.red);
         if (Physics.Raycast(pos, -transform.up, 0.20f, terrainLayer))
         {
-            Debug.Log("Touching");
+            //Debug.Log("Touching");
             return true;
         }
-        Debug.Log("nein");
+        //Debug.Log("nein");
         return false;
 
     }
@@ -158,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
         float tempforce = maximumForceSpeed;
         canDash = false;
         maximumForceSpeed = dashForceSpeedOverride;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(dashDuration);
         maximumForceSpeed = tempforce;
         yield return null;
         yield return new WaitForSeconds(dashCD);

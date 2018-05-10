@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1627,6 +1627,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169611675}
+--- !u!1 &170246630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 170246631}
+  m_Layer: 0
+  m_Name: ZeroPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &170246631
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170246630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2088350438}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170594454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,6 +2327,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 70000
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -2438,6 +2470,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2592,6 +2638,11 @@ Canvas:
 --- !u!1 &424518875 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1737677098437094, guid: 382fe1c464be1624aaec49116359cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1106278436}
+--- !u!4 &424518876 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4093110676484924, guid: 382fe1c464be1624aaec49116359cb0e,
     type: 2}
   m_PrefabInternal: {fileID: 1106278436}
 --- !u!114 &424518877 stripped
@@ -3367,6 +3418,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 70000
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -4154,6 +4209,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1814280329611578, guid: 382fe1c464be1624aaec49116359cb0e,
     type: 2}
   m_PrefabInternal: {fileID: 1106278436}
+--- !u!4 &962087166 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4700314916042038, guid: 382fe1c464be1624aaec49116359cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1106278436}
 --- !u!114 &962087167 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114750651751765814, guid: 382fe1c464be1624aaec49116359cb0e,
@@ -4277,6 +4337,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 70000
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
@@ -4912,6 +4976,143 @@ Prefab:
     - target: {fileID: 1727118638493524, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
       propertyPath: m_Name
       value: PlayerHolder/GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: fallDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: fallDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: fallDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: fallDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: GlobalVarsToggle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpAngleAdjust
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpAngleAdjust
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpAngleAdjust
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: jumpAngleAdjust
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: deadZone
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: deadZone
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: deadZone
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: deadZone
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737677098437094, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473478013932248, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814280329611578, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
@@ -6130,6 +6331,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1473478013932248, guid: 382fe1c464be1624aaec49116359cb0e,
     type: 2}
   m_PrefabInternal: {fileID: 1106278436}
+--- !u!4 &1521880275 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4365819932919030, guid: 382fe1c464be1624aaec49116359cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1106278436}
 --- !u!114 &1521880276 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114924008826172952, guid: 382fe1c464be1624aaec49116359cb0e,
@@ -6213,6 +6419,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1106278436}
   m_Script: {fileID: 11500000, guid: 44ead7d75c405ff41842e0c215509493, type: 3}
+--- !u!4 &1566109563 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4216788896960470, guid: 382fe1c464be1624aaec49116359cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1106278436}
 --- !u!1001 &1590464527
 Prefab:
   m_ObjectHideFlags: 0
@@ -7080,6 +7291,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -7942,6 +8167,7 @@ GameObject:
   - component: {fileID: 1924441278}
   - component: {fileID: 1924441277}
   - component: {fileID: 1924441281}
+  - component: {fileID: 1924441282}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8005,8 +8231,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1924441276}
-  m_LocalRotation: {x: 0.3676842, y: -0, z: -0, w: 0.9299507}
-  m_LocalPosition: {x: -0.4, y: 9.58, z: -11.48}
+  m_LocalRotation: {x: 0.39474386, y: 0, z: 0, w: 0.91879123}
+  m_LocalPosition: {x: -0.4000001, y: 45.000008, z: -43.70001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1245835374}
@@ -8015,7 +8241,7 @@ Transform:
   - {fileID: 50166339}
   m_Father: {fileID: 1790667895}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 43.146004, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.5, y: 0, z: 0}
 --- !u!114 &1924441281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8028,6 +8254,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 1dd7e80f6aa920d4584746c2da618e3d, type: 2}
+--- !u!114 &1924441282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924441276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c79d0b62d34ff14c9b5db0b7ecf9d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetsS:
+  - {fileID: 1566109563}
+  - {fileID: 424518876}
+  - {fileID: 1521880275}
+  - {fileID: 962087166}
+  zeroPoint: {fileID: 170246631}
+  ignoreDistance: 50
+  ignoreHeight: 50
+  ignoreDeapth: 0
+  extraZoomOut: 0
+  offset: {x: -0.4, y: 9.58, z: -11.48}
+  smoothTime: 1
+  minZoom: 80
+  maxZoom: 15
+  zoomLimiter: 50
 --- !u!1 &1932526754
 GameObject:
   m_ObjectHideFlags: 0
@@ -8643,6 +8895,10 @@ MonoBehaviour:
   movementSpeed: 600
   fallSpeed: 5
   jumpSpeed: 70000
+  jumpAngleAdjust: 0
+  dashDuration: 0
+  fallDelay: 0
+  deadZone: 0
   rotateSpeed: 0.1
   maximumForceSpeed: 7
   timeTillFallMultipler: 1
