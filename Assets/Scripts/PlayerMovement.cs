@@ -133,19 +133,13 @@ public class PlayerMovement : MonoBehaviour
                 //moveVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
                 //rb.AddForce(moveVec); // X,Y,Z forces
             }
-            else if (jumpForce != 0 && canDash)
-            {
-                //moveVec += (transform.forward + (transform.up * 3)) * dashSpeed;
-                //(trans.forward + (trans.up / myPlayerAttack.knockUp)) * (myPlayerAttack.speed * otherPlayerAttack.AttackMultiplier)
-                rb.AddForce(transform.forward * jumpSpeed, ForceMode.Impulse);
-                StartCoroutine(StartCD());
-            }
+
 
 
             // Slow down the player faster
             // Limit the players speed
-            if (velocity.magnitude > maximumForceSpeed)
-                rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
+            //if (velocity.magnitude > maximumForceSpeed)
+            //    rb.velocity = Vector3.ClampMagnitude(velocity, maximumForceSpeed);
         }
         else moving = false;
         // when the player releases a key or stick, slow them to 0 

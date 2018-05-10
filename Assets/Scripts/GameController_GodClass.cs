@@ -25,6 +25,10 @@ public class GameController_GodClass : MonoBehaviour
     [SerializeField] int kingOfTheHillMaxScore;
     [SerializeField] float maxMultiplier;
     [SerializeField] int[] playerSocres = new int[4]{ 0, 0, 0, 0 };
+    [SerializeField]
+    CameraZoomer myZoomer;
+    [SerializeField]
+    Camera mainCamera;
     private int[] finishOrder = new int[4];
     private int knockOutOrder = 4;
     private int numberOfPlayers;
@@ -188,6 +192,8 @@ public class GameController_GodClass : MonoBehaviour
         myCanvas[1].enabled = true;
         for (int i = 0; i < numberOfPlayers; i++)
         {
+            myZoomer.enabled = false;
+            mainCamera.fieldOfView = 60;
             playerObjects[i].transform.parent = winingSpots[finishOrder[i]-1].transform;
             playerObjects[i].transform.GetComponent<Rigidbody>().isKinematic = true;
             playerObjects[i].transform.GetComponent<Rigidbody>().useGravity = false;
