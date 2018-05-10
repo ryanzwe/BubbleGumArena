@@ -815,6 +815,16 @@ Prefab:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1347764053}
+    - target: {fileID: 114741027621391396, guid: 52d6dd152ed3ab04e9a1c74951ac0944,
+        type: 2}
+      propertyPath: kingOfTheHillMaxScore
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114741027621391396, guid: 52d6dd152ed3ab04e9a1c74951ac0944,
+        type: 2}
+      propertyPath: gameMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52d6dd152ed3ab04e9a1c74951ac0944, type: 2}
   m_IsPrefabParent: 0
@@ -2266,6 +2276,8 @@ MonoBehaviour:
   knockUp: 1
   headButtReduce: 0.8
   attackMultiEffector: 0.6
+  lastPlayerToHitMe: -1
+  playerID: -1
   attacking: 0
   anim: {fileID: 1808225858}
 --- !u!136 &300073145
@@ -3357,6 +3369,8 @@ MonoBehaviour:
   knockUp: 1
   headButtReduce: 0.8
   attackMultiEffector: 0.6
+  lastPlayerToHitMe: -1
+  playerID: -1
   attacking: 0
   anim: {fileID: 55526153}
 --- !u!136 &552156358
@@ -4276,6 +4290,8 @@ MonoBehaviour:
   knockUp: 1
   headButtReduce: 0.8
   attackMultiEffector: 0.6
+  lastPlayerToHitMe: -1
+  playerID: -1
   attacking: 0
   anim: {fileID: 1275690628}
 --- !u!136 &969367704
@@ -4980,22 +4996,22 @@ Prefab:
     - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: fallDelay
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: fallDelay
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: fallDelay
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: fallDelay
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
@@ -5025,22 +5041,22 @@ Prefab:
     - target: {fileID: 114897661431436862, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: dashCD
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 114979599021621940, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: dashCD
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 114207124632963380, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: dashCD
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
       propertyPath: dashCD
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 114469041845312154, guid: 382fe1c464be1624aaec49116359cb0e,
         type: 2}
@@ -5113,6 +5129,26 @@ Prefab:
         type: 2}
       propertyPath: dashDuration
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924008826172952, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: attackMultiEffector
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052224590458312, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: attackMultiEffector
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114395331346630100, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: attackMultiEffector
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750651751765814, guid: 382fe1c464be1624aaec49116359cb0e,
+        type: 2}
+      propertyPath: attackMultiEffector
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 382fe1c464be1624aaec49116359cb0e, type: 2}
@@ -8834,6 +8870,8 @@ MonoBehaviour:
   knockUp: 1
   headButtReduce: 0.8
   attackMultiEffector: 0.6
+  lastPlayerToHitMe: -1
+  playerID: -1
   attacking: 0
   anim: {fileID: 127424316}
 --- !u!136 &2147053175
