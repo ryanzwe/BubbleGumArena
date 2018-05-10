@@ -32,11 +32,13 @@ public class AttackCollision : MonoBehaviour
             {
                 otherBody.AddForce((trans.forward + (trans.up / myPlayerAttack.knockUp)) * (myPlayerAttack.speed * otherPlayerAttack.AttackMultiplier));
                 otherPlayerAttack.AttackMultiplier = 1f;
+                otherPlayerAttack.lastPlayerToHitMe = myPlayerAttack.playerID;
             }
             else
             {
                 otherBody.AddForce((trans.forward + (trans.up / (myPlayerAttack.knockUp) * myPlayerAttack.headButtReduce)) * ((myPlayerAttack.speed * myPlayerAttack.headButtReduce) * otherPlayerAttack.AttackMultiplier));
                 otherPlayerAttack.AttackMultiplier = 1f;
+                otherPlayerAttack.lastPlayerToHitMe = myPlayerAttack.playerID;
             }
             aud.Play();
             //attacking = false;
