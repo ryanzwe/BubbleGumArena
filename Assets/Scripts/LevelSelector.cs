@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class LevelSelector : MonoBehaviour
     [SerializeField]
     private Sprite[] levelImages;
     [SerializeField]
-    private Sprite currentLevelSprite;
+    private Image curLVLImg;
 
 
     public void LoadLevelIndex()
@@ -20,9 +21,9 @@ public class LevelSelector : MonoBehaviour
         levelIndex += amount;
         if (levelIndex > levelImages.Length)
             levelIndex = 1;
-        else if (levelIndex < levelImages.Length)
-            levelIndex = levelImages.Length - 1;
+        else if (levelIndex <= 0)
+            levelIndex = levelImages.Length;
 
-        currentLevelSprite = levelImages[levelIndex];
+        curLVLImg.sprite = levelImages[levelIndex-1];
     }
 }
