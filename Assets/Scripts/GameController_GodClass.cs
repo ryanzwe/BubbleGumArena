@@ -227,7 +227,7 @@ public class GameController_GodClass : MonoBehaviour
         {
             //if (myPlayers[i].playerAttack.AttackMultiplier >= maxMultiplier)
             //    playerHPPercent[i].text = "TOO HIGH";
-            playerHPPercent[i].text = (myPlayers[i].playerAttack.AttackMultiplier * 100).ToString() + "%";
+            playerHPPercent[i].text = (Mathf.RoundToInt(myPlayers[i].playerAttack.AttackMultiplier * 100) - 100).ToString() + "%";
         }
     }
 }

@@ -102,10 +102,10 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(frameGrounded);
             Vector3 moveVec = new Vector3(0, 0, 0);
             Vector3 lookVec = new Vector3(0, 0, 0);
-            if(horizontalForce > deadZone || horizontalForce < -deadZone)
-                lookVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
-            if (verticalForce > deadZone || verticalForce < -deadZone)
-                lookVec += new Vector3(0, 0, verticalForce) * movementSpeed;
+            //if(horizontalForce > deadZone || horizontalForce < -deadZone)
+               // lookVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
+            //if (verticalForce > deadZone || verticalForce < -deadZone)
+                lookVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
             if (jumpForce != 0 && canDash)
             {
                 if (frameGrounded)
@@ -114,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     moveVec += (transform.forward + (transform.up * jumpAngleAdjust)) * jumpSpeed;
                     lookVec += (transform.forward + (transform.up * jumpAngleAdjust)) * jumpSpeed;
+                    moveVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
+                    rb.AddForce(moveVec); // X,Y,Z forces
                     fallTimer = fallDelay;
                 }
                 StartCoroutine(StartCD());
@@ -122,10 +124,11 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookVec), rotateSpeed);
             if (frameGrounded)
             {
-                if (horizontalForce > deadZone || horizontalForce < -deadZone)
-                    moveVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
-                if (verticalForce > deadZone || verticalForce < -deadZone)
-                    moveVec += new Vector3(0, 0, verticalForce) * movementSpeed;
+                //if (horizontalForce > deadZone || horizontalForce < -deadZone)
+                    //moveVec += new Vector3(horizontalForce, 0, 0) * movementSpeed;
+                //if (verticalForce > deadZone || verticalForce < -deadZone)
+                    moveVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
+                rb.AddForce(moveVec); // X,Y,Z forces
 
                 //moveVec += new Vector3(horizontalForce, 0, verticalForce) * movementSpeed;
                 //rb.AddForce(moveVec); // X,Y,Z forces
@@ -138,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(StartCD());
             }
 
-            rb.AddForce(moveVec); // X,Y,Z forces
 
             // Slow down the player faster
             // Limit the players speed

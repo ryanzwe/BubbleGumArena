@@ -7522,6 +7522,11 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 2020129266}
+    - target: {fileID: 114321134289656732, guid: 66fbc8f7674348743becf67872ab0a50,
+        type: 2}
+      propertyPath: maxMultiplier
+      value: 2.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66fbc8f7674348743becf67872ab0a50, type: 2}
   m_IsPrefabParent: 0
@@ -11164,6 +11169,46 @@ Prefab:
     - target: {fileID: 4483621176863996, guid: 18118c998b01a574d953f45b3828ab1c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114471422427924042, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 17000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326894208596662, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 17000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544175650998096, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 17000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114086851494866714, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 17000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114471422427924042, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326894208596662, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544175650998096, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114086851494866714, guid: 18118c998b01a574d953f45b3828ab1c,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18118c998b01a574d953f45b3828ab1c, type: 2}
