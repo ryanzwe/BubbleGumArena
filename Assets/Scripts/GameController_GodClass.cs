@@ -24,8 +24,8 @@ public class GameController_GodClass : MonoBehaviour
     [SerializeField] bool gameMode = false;
     [SerializeField] int kingOfTheHillMaxScore;
     [SerializeField] float maxMultiplier;
-    [SerializeField] List<int>playerSocres = new List<int>(){ 0, 0, 0, 0 };
-    private List<int> finishOrder = new List<int>() {0,0,0,0};
+    [SerializeField] int[] playerSocres = new int[4]{ 0, 0, 0, 0 };
+    private int[] finishOrder = new int[4];
     private int knockOutOrder = 4;
     private int numberOfPlayers;
     private bool paused = false;
@@ -89,6 +89,8 @@ public class GameController_GodClass : MonoBehaviour
         }
         FloorDeathBarrirer();
         UpdateDisplay();
+        if (gameMode)
+            KingOfTheHill();
         //WhoWins();
         if (knockOutOrder <= 1)
         {
@@ -110,7 +112,7 @@ public class GameController_GodClass : MonoBehaviour
     //other game mode is called survival 
     void KingOfTheHill()
     {
-        for (int i = 0; i < numberOfPlayers; i++)
+        for (int i = 0; i < 4; i++)
         {
             if(playerSocres[i] >= kingOfTheHillMaxScore)
             {
@@ -127,7 +129,7 @@ public class GameController_GodClass : MonoBehaviour
         int secondRef = -1;
         int thirdRef = -1;
         int fourthRef = -1;
-        for (int j = 0; j < playerSocres.Count; j++)
+        for (int j = 0; j < playerSocres.Length; j++)
         {
             if (playerSocres[j] > highScore)
             {
@@ -136,7 +138,7 @@ public class GameController_GodClass : MonoBehaviour
             }
         }
         highScore = 0;
-        for (int j = 0; j < playerSocres.Count; j++)
+        for (int j = 0; j < playerSocres.Length; j++)
         {
             if (playerSocres[j] > highScore && j != firstRef)
             {
@@ -145,7 +147,7 @@ public class GameController_GodClass : MonoBehaviour
             }
         }
         highScore = 0;
-        for (int j = 0; j < playerSocres.Count; j++)
+        for (int j = 0; j < playerSocres.Length; j++)
         {
             if (playerSocres[j] > highScore && j != firstRef && j != secondRef)
             {
@@ -154,7 +156,7 @@ public class GameController_GodClass : MonoBehaviour
             }
         }
         highScore = 0;
-        for (int j = 0; j < playerSocres.Count; j++)
+        for (int j = 0; j < playerSocres.Length; j++)
         {
             if (playerSocres[j] > highScore && j != firstRef && j != secondRef && j != thirdRef)
             {
