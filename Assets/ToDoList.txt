@@ -1,0 +1,10 @@
+To add:
+	UI scaling
+	Abilities
+	Custom controls
+ 
+
+To change:
+
+
+To remove:
